@@ -6,8 +6,8 @@ module booth_sv;
     logic signed [N-1:0] multiplicand, multiplier;
     logic signed [2*N-1:0] out;
     logic done;
-    logic [7:0] [N-1:0] BR;
-    logic [N-1:0] AC;
+    logic [7:0] [N:0] BR;
+    logic [N:0] AC;
     logic [N:0] Q;
     logic [5:0] count;
 
@@ -35,8 +35,8 @@ module booth_sv;
         $display("Starting Booth Multiplier Verification");
         // The multiplier can handle only half of the range
         // 8 bit cannot handle -128, it can handle only -64 to 64
-        for (int i = -(2**(N-2))+1; i < 2**(N-2); i = i + 1) begin
-            for (int j = -(2**(N-2))+1; j < 2**(N-2); j = j + 1) begin
+        for (int i = -(2**(N-1)); i < 2**(N-1); i = i + 1) begin
+            for (int j = -(2**(N-1)); j < 2**(N-1); j = j + 1) begin
                 multiplicand = i; multiplier = j;
                 while(1) begin
                     #10; // Wait for result to settle

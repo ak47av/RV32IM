@@ -4,8 +4,8 @@ module Booth4 #(parameter N=32)(
     input logic rst, clk,
     input logic signed [N-1:0] multiplicand, multiplier,
     output logic signed [2*N-1:0] out,
-    output logic [7:0] [N-1:0] BR,
-    output logic [N-1:0] AC,
+    output logic [7:0] [N:0] BR,
+    output logic [N:0] AC,
     output logic [N:0] Q,
     output logic [5:0] count,
     output logic done
@@ -40,11 +40,11 @@ module Booth4 #(parameter N=32)(
                 RUNNING: begin
                     if(count < (N >> 1)) begin
                         AC = AC + BR[Q[2:0]];
-                        {AC, Q} = {AC[N-1], AC, Q[N:1]};
-                        {AC, Q} = {AC[N-1], AC, Q[N:1]};
+                        {AC, Q} = {AC[N], AC, Q[N:1]};
+                        {AC, Q} = {AC[N], AC, Q[N:1]};
                         count = count + 1;
                     end else begin
-                        out <= {AC, Q[N:1]};
+                        out <= {AC[N-1:0], Q[N:1]};
                         done <= 1;
                         state <= DONE;
                     end
