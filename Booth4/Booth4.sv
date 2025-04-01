@@ -10,11 +10,6 @@ module Booth4 #(parameter N=32)(
     output logic [5:0] count,
     output logic done
 );
-
-//    logic [2:0] [N-1:0] BR;
-//    logic [N-1:0] AC;
-//    logic [N:0] Q;
-//    logic [5:0] count;
     
     typedef enum logic [1:0] {IDLE, RUNNING, DONE} state_t;
     state_t state;
@@ -44,11 +39,6 @@ module Booth4 #(parameter N=32)(
                 
                 RUNNING: begin
                     if(count < (N >> 1)) begin
-//                        case(Q[2:0])
-//                            2'b001: AC = AC + negBR;
-//                            2'b01: AC = AC + BR;
-//                            default: AC = AC;
-//                        endcase
                         AC = AC + BR[Q[2:0]];
                         {AC, Q} = {AC[N-1], AC, Q[N:1]};
                         {AC, Q} = {AC[N-1], AC, Q[N:1]};

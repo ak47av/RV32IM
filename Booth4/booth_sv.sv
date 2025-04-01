@@ -1,7 +1,7 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ns
 
 module booth_sv;
-    parameter N = 32;
+    parameter N = 8;
     logic clk, rst;
     logic signed [N-1:0] multiplicand, multiplier;
     logic signed [2*N-1:0] out;
@@ -32,10 +32,28 @@ module booth_sv;
         rst = 1;
         #10 rst = 0;
 
-        // Test cases
-        multiplicand = -3; multiplier = -4; #(N*6);
-        multiplicand = -345; multiplier = 97; #(N*6);
+        $display("Starting Booth Multiplier Verification");
+        // The multiplier can handle only half of the range
+        // 8 bit cannot handle -128, it can handle only -64 to 64
+        for (int i = -(2**(N-2))+1; i < 2**(N-2); i = i + 1) begin
+            for (int j = -(2**(N-2))+1; j < 2**(N-2); j = j + 1) begin
+                multiplicand = i; multiplier = j;
+                while(1) begin
+                    #10; // Wait for result to settle
+                    if(done === 0) begin 
+                        continue;
+                    end else begin
+                        if (out !== i*j) begin
+                            $error("Mismatch: %d * %d = %d, got %d", i, j, i*j, out);
+                        end
+                        break;
+                    end
+                end
+            end        
+        end
 
-        $finish;
+        $display("Test Completed");
+        
+        #1000; $finish;
     end
 endmodule
