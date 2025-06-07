@@ -1,31 +1,15 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12.04.2025 16:42:51
-// Design Name: 
-// Module Name: ALU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module ALU(
+    input logic clk,
+    input logic rst,
     input logic [31:0] dataA,
     input logic [31:0] dataB,
     input logic [3:0] sel,
     output logic [31:0] dataD
     );
+    
+    //logic [31:0] dataD;
     
     always @(*) begin
         case(sel)
@@ -45,8 +29,14 @@ module ALU(
             'hD: dataD = dataA >>> dataB[4:0];   // SRA - Shift right arithmetic 
             'hE: dataD = 0; // unused
             'hF: dataD = 0; // unused
+            default: dataD = 32'hDEADBEEF;
         endcase
     end
     
+    always_ff @(posedge clk or posedge rst) begin
+        $display("dataA: %h, dataB: %h, dataD:%h", dataA, dataB, dataD);
+//        if(rst) out <= 0;
+//        else out <= dataD;
+    end
     
 endmodule

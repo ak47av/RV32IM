@@ -22,7 +22,7 @@
 
 module ImmediateGenerator(
     input logic [31:0] ins,
-    input logic [2:0] ins_sel,
+    input logic [2:0] immSel,
     output logic [31:0] imm31_0
     );
     
@@ -38,11 +38,11 @@ module ImmediateGenerator(
     logic imm20;
     logic [19:0] imm31_12;
     
-    ISplitter(.ins(ins), .opcode(), .rd(), .funct3(), .rs1(), .imm11_0(imm11_0));
-    JSplitter(.ins(ins), .opcode(), .rd(), .imm19_12(imm19_12), .imm11(imm11_J), .imm10_1(imm10_1), .imm20(imm20));
-    BSplitter(.ins(ins), .opcode(), .imm11(imm11_B), .imm4_1(imm4_1), .funct3(), .rs1(), .rs2(), .imm10_5(imm10_5), .imm12(imm12));
-    USplitter(.ins(ins), .opcode(), .rd(), .imm31_12(imm31_12));
-    SSplitter(.ins(ins), .opcode(), .imm4_0(imm4_0), .funct3(), .rs1(), .rs2(), .imm11_5(imm11_5));
+    ISplitter ispl(.ins(ins), .opcode(), .rd(), .funct3(), .rs1(), .imm11_0(imm11_0));
+    JSplitter jspl(.ins(ins), .opcode(), .rd(), .imm19_12(imm19_12), .imm11(imm11_J), .imm10_1(imm10_1), .imm20(imm20));
+    BSplitter bspl(.ins(ins), .opcode(), .imm11(imm11_B), .imm4_1(imm4_1), .funct3(), .rs1(), .rs2(), .imm10_5(imm10_5), .imm12(imm12));
+    USplitter uspl(.ins(ins), .opcode(), .rd(), .imm31_12(imm31_12));
+    SSplitter sspl(.ins(ins), .opcode(), .imm4_0(imm4_0), .funct3(), .rs1(), .rs2(), .imm11_5(imm11_5));
     
     logic [31:0] iout;
     logic [31:0] sout;
@@ -57,7 +57,7 @@ module ImmediateGenerator(
     assign uout = {imm31_12, 12'b0};
     
     always @ (*) begin
-        case(ins_sel)
+        case(immSel)
             3'b000: imm31_0 = iout;
             3'b001: imm31_0 = sout;
             3'b010: imm31_0 = bout;
