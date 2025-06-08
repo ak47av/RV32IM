@@ -5,11 +5,28 @@ module ALU(
     input logic rst,
     input logic [31:0] dataA,
     input logic [31:0] dataB,
-    input logic [3:0] sel,
-    output logic [31:0] dataD
+    input logic [4:0] sel,
+    output logic [31:0] dataD,
+    output logic ready
     );
     
-    //logic [31:0] dataD;
+    logic [63:0] muldivResult;
+    logic muldivDone;
+    logic is_muldiv, is_muldiv_d;
+    logic boothRst;
+    
+    assign is_muldiv = sel[4];
+    assign ready = (is_muldiv == 0) || muldivDone; // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
+    assign boothRst = is_muldiv & ~is_muldiv_d;    // SIGNAL TO RESET BOOTH MULTIPLIER
+    
+    Booth4 multiplier(
+        .clk(clk),
+        .rst(boothRst),
+        .multiplicand(dataA),
+        .multiplier(dataB),
+        .out(muldivResult),
+        .done(muldivDone)
+    );
     
     always @(*) begin
         case(sel)
@@ -27,16 +44,19 @@ module ALU(
             'hB: dataD = $signed(dataA) >= $signed(dataB) ? 1:0;     // GE - Greater than signed
             'hC: dataD = $unsigned(dataA) >= $unsigned(dataB) ? 1:0; // GEU - Greater than unsgined
             'hD: dataD = dataA >>> dataB[4:0];   // SRA - Shift right arithmetic 
-            'hE: dataD = 0; // unused
+            'h1E: begin
+                if(muldivDone)dataD = muldivResult[31:0];   // MUL - multiply and produce lower 32 bits
+                else dataD = 32'h00000000; 
+            end
             'hF: dataD = 0; // unused
             default: dataD = 32'hDEADBEEF;
         endcase
     end
     
     always_ff @(posedge clk or posedge rst) begin
-        $display("dataA: %h, dataB: %h, dataD:%h", dataA, dataB, dataD);
-//        if(rst) out <= 0;
-//        else out <= dataD;
+        $display("[ALU DEBUG] sel = %b, ready = %b", sel, ready);
+        if(rst) is_muldiv_d <= 0;
+        else is_muldiv_d <= is_muldiv;
     end
     
 endmodule

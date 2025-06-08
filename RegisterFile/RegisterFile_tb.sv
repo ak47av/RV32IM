@@ -1,26 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12.04.2025 16:12:17
-// Design Name: 
-// Module Name: register_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
-module register_tb(
+module RegisterFile_tb(
 
     );
     
@@ -32,8 +12,6 @@ module register_tb(
     logic write_enable;
     logic [31:0] rs1;
     logic [31:0] rs2;
-    
-
     
     RegisterFile registers(
         .clk(clk),
@@ -61,4 +39,5 @@ module register_tb(
     end
     
 endmodule
+
 

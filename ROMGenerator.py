@@ -16,10 +16,10 @@ with open(input_csv, newline='') as csvfile:
         for row in reader:
             ibin = row['ibin']
             obin = row['obin']
-            addr_hex = f"9'h{int(ibin, 2):02X}"
-            out.write(f"            {addr_hex}: control = 9'b{obin};\n")
+            addr_bin = f"10'b{ibin}"
+            out.write(f"            {addr_bin}: control = 10'b{obin};\n")
 
-        out.write("            default: control = 9'b000000000;\n")
+        out.write("            default: control = 10'b0000010001;\n")
         out.write("        endcase\n")
         out.write("    end\n\n")
         out.write("endmodule\n")

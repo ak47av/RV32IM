@@ -9,9 +9,10 @@ module Datapath(
     logic [4:0] rsi1, rsi2, rdi;
     
     logic [31:0] outPCPlus1, outPC;
+    logic [31:0] ready;
     
     logic regwen, bsel;
-    logic [3:0] ALUselect;
+    logic [4:0] ALUselect;
     //logic [2:0] Mselect;
     logic [2:0] IMMselect;
     
@@ -29,12 +30,14 @@ module Datapath(
     assign rd = ALUoutput;
     
     
+    
     ProgramCounter PC(
                     .inPC(outPCPlus1), 
                     .clk(clk), 
                     .rst(rst), 
                     .outPCPlus1(outPCPlus1), 
-                    .outPC(outPC)
+                    .outPC(outPC),
+                    .ready(ready)
                     );
     
     InstructionMemory ins_mem(
@@ -77,9 +80,11 @@ module Datapath(
             .dataA(rs1),
             .dataB(dataB),
             .sel(ALUselect),
-            .dataD(ALUoutput)
+            .dataD(ALUoutput),
+            .ready(ready)
         );
     
     
     
 endmodule
+
