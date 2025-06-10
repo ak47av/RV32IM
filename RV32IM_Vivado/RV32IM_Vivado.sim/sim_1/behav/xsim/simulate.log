@@ -1,0 +1,401 @@
+Time resolution is 1 ps
+Starting Datapath simulation...
+[ALU DEBUG] sel = 00000, ready = 1
+[PC] Reset REGISTER to 0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000000 | Fetch: 3e800093 | Decode: 011 | rs1: 0 | imm: 3e8 | rd: 1 | Execute: 000003e8
+Register file state:
+x[0] = 00000000
+x[1] = 00000000
+x[2] = 00000000
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000001 at time 15000
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000001 | Fetch: 39000113 | Decode: 011 | rs1: 0 | imm: 390 | rd: 2 | Execute: 00000390
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000000
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000002 at time 25000
+[ALU DEBUG] sel = 00000, ready = 1
+Resetting Booth multiplier.
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+Resetting Booth multiplier.
+[ALU DEBUG] sel = 11110, ready = x
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth IDLE] multiplicand=1000, multiplier=912
+[ALU DEBUG] sel = 11110, ready = x
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=1, AC=0, Q=456, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=2, AC=0, Q=114, BR[10]=1000
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=3, AC=250, Q=28, BR[100]=8589932592
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=4, AC=8589934154, Q=4294967303, BR[111]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=5, AC=8589934482, Q=5368709121, BR[1]=1000
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=6, AC=222, Q=5637144576, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=7, AC=55, Q=5704253440, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=8, AC=13, Q=7868514304, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=9, AC=3, Q=4114612224, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=10, AC=0, Q=7471104000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=11, AC=0, Q=1867776000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=12, AC=0, Q=466944000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=13, AC=0, Q=116736000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=14, AC=0, Q=29184000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=15, AC=0, Q=7296000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=16, AC=0, Q=1824000, BR[0]=0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth DONE]                   0
+[ALU DEBUG] sel = 11110, ready = 0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 000dea80
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000003 at time 225000
+[Booth DONE] Transitioning to IDLE
+[ALU DEBUG] sel = 11110, ready = 1
+PC: 00000003 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000004 at time 235000
+[Booth IDLE] multiplicand=0, multiplier=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000004 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000005 at time 245000
+[Booth RUNNING] count=1, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000005 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000006 at time 255000
+[Booth RUNNING] count=2, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000006 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000007 at time 265000
+[Booth RUNNING] count=3, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000007 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000008 at time 275000
+[Booth RUNNING] count=4, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000008 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000009 at time 285000
+[Booth RUNNING] count=5, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000009 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000a at time 295000
+[Booth RUNNING] count=6, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000a | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000b at time 305000
+[Booth RUNNING] count=7, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000b | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000c at time 315000
+[Booth RUNNING] count=8, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000c | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000d at time 325000
+[Booth RUNNING] count=9, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000d | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000e at time 335000
+[Booth RUNNING] count=10, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000e | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 0000000f at time 345000
+[Booth RUNNING] count=11, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 0000000f | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000010 at time 355000
+[Booth RUNNING] count=12, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000010 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = 000003e8
+x[2] = 00000390
+x[3] = 000dea80
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000011 at time 365000
+[Booth RUNNING] count=13, AC=0, Q=0, BR[0]=0
+[ALU DEBUG] sel = 00000, ready = 1
+PC: 00000011 | Fetch: 00000013 | Decode: 0

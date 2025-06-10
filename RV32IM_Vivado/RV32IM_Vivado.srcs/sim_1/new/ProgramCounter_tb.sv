@@ -1,0 +1,66 @@
+`timescale 1ns / 1ps
+
+
+module ProgramCounter_tb;
+
+    // Inputs
+    logic [31:0] inPC;
+    logic clk;
+    logic rst;
+
+    // Outputs
+    logic [31:0] outPCPlus1;
+    logic [31:0] outPC;
+
+    // Instantiate the ProgramCounter module
+    ProgramCounter uut (
+        .inPC(inPC),
+        .clk(clk),
+        .rst(rst),
+        .outPCPlus1(outPCPlus1),
+        .outPC(outPC)
+    );
+
+    // Clock generation: 10ns period
+    always #5 clk = ~clk;
+
+    initial begin
+        // Initialize
+        clk = 0;
+        rst = 0;
+        inPC = 32'h00000000;
+
+        $display("Time\tclk\trst\tinPC\t\toutPC\t\toutPC+1");
+
+        // Wait one clock cycle with reset low
+        #10;
+        $display("%0t\t%b\t%b\t%h\t%h\t%h", $time, clk, rst, inPC, outPC, outPCPlus1);
+
+        // Apply reset (active high)
+        rst = 1;
+
+        // Load PC = 10
+        inPC = 32'h0000000A;
+        #10;
+        $display("%0t\t%b\t%b\t%h\t%h\t%h", $time, clk, rst, inPC, outPC, outPCPlus1);
+
+        // Load PC = 100
+        inPC = 32'h00000064;
+        #10;
+        $display("%0t\t%b\t%b\t%h\t%h\t%h", $time, clk, rst, inPC, outPC, outPCPlus1);
+
+        // Deassert reset (reset PC to 0)
+        rst = 0;
+        #10;
+        $display("%0t\t%b\t%b\t%h\t%h\t%h", $time, clk, rst, inPC, outPC, outPCPlus1);
+
+        // Assert reset again and load new value
+        rst = 1;
+        inPC = 32'h00000020;
+        #10;
+        $display("%0t\t%b\t%b\t%h\t%h\t%h", $time, clk, rst, inPC, outPC, outPCPlus1);
+
+        $finish;
+    end
+
+endmodule
