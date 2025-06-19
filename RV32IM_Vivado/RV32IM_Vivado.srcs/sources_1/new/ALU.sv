@@ -15,6 +15,7 @@ module ALU(
     logic muldivDone;
     logic is_muldiv, is_muldiv_d;
     logic boothRst;
+    //logic sign_dataA;
     
     assign is_muldiv = sel[4];
     assign ready = (is_muldiv == 0) || muldivDone; // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
@@ -25,6 +26,7 @@ module ALU(
         .rst(boothRst),
         .multiplicand(multiplicand),
         .multiplier(multiplier),
+        //.signed_multiplicand(sign_dataA),
         .out(muldivResult),
         .done(muldivDone)
     );
@@ -54,21 +56,24 @@ module ALU(
             'h1F: begin
                 multiplicand = dataA;
                 multiplier = dataB;
+                //sign_dataA = 1;
                 if(muldivDone)dataD = $signed(muldivResult[63:32]);   // MULH - multiply and produce upper 32 bits
                 else dataD = 32'h00000000; 
             end
-            'h10: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = muldivResult[63:32];   // MULHU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
-            end
-            'h11: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = $signed(muldivResult[63:32]);   // MULHSU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
-            end
+//            'h10: begin
+//                multiplicand = dataA;
+//                multiplier = dataB;
+//                //sign_dataA = 0;
+//                if(muldivDone)dataD = muldivResult[63:32];   // MULHU - multiply and produce upper 32 bits
+//                else dataD = 32'h00000000; 
+//            end
+//            'h11: begin
+//                multiplicand = dataA;
+//                multiplier = dataB;
+//                //sign_dataA = 1;
+//                if(muldivDone)dataD = $signed(muldivResult[63:32]);   // MULHSU - multiply and produce upper 32 bits
+//                else dataD = 32'h00000000; 
+//            end
             default: dataD = 32'hDEADBEEF;
         endcase
     end

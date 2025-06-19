@@ -35,6 +35,7 @@ module ALU_tb;
             dataA = a;
             dataB = b;
             sel = op;
+            wait(!ready);
             @(posedge clk);
             wait (ready);
             $display("[%s] A = %0h, B = %0h, dataD = 0x%08X", name, a, b, dataD);
@@ -46,10 +47,10 @@ module ALU_tb;
         reset();
 
         // Test cases
-        //run_mul_test(-32'sd2, 32'sd3, 5'h1E, "MUL   ");       // 3 * 5 = 15 -> lower 32 bits
+        run_mul_test(-32'sd2, 32'sd3, 5'h1E, "MUL   ");       // 3 * 5 = 15 -> lower 32 bits
         //run_mul_test(-32'sd2, 32'sd3, 5'h11, "MULHSU");      // -2 * 3 = -6 -> upper 32 bits
-        //run_mul_test(-12, -13, 5'h1F, "MULH  "); // signed high
-        //run_mul_test(32'd123456, 32'd654321, 5'h10, "MULHU "); // unsigned high
+        run_mul_test(-32'sd2, 32'sd3, 5'h1F, "MULH  "); // -2 * -3 = 0
+        //run_mul_test(-32'sd4, -32'sd3, 5'h10, "MULHU "); // -2 * -3 = 0xfffffffb
 
         $display("All tests finished.");
         $finish;

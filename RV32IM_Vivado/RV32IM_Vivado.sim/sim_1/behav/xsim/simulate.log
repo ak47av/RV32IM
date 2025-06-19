@@ -1,0 +1,452 @@
+Time resolution is 1 ps
+Starting Datapath simulation...
+[PC] Reset REGISTER to 0
+PC: 00000000 | Fetch: ffe00093 | Decode: 011 | rs1: 0 | imm: fffffffe | rd: 1 | Execute: fffffffe
+Register file state:
+x[0] = 00000000
+x[1] = 00000000
+x[2] = 00000000
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000001 at time 15000
+PC: 00000001 | Fetch: 00300113 | Decode: 011 | rs1: 0 | imm: 3 | rd: 2 | Execute: 00000003
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000000
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000002 at time 25000
+Resetting Booth multiplier.
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+Resetting Booth multiplier.
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth IDLE] multiplicand=fffffffe, multiplier=3
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=0, AC=0, Q=6, BR[6]=2
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=1, AC=0, Q=100000001, BR[1]=1fffffffe
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=2, AC=1ffffffff, Q=140000000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=3, AC=1ffffffff, Q=1d0000000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=4, AC=1ffffffff, Q=1f4000000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=5, AC=1ffffffff, Q=1fd000000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=6, AC=1ffffffff, Q=1ff400000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=7, AC=1ffffffff, Q=1ffd00000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=8, AC=1ffffffff, Q=1fff40000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=9, AC=1ffffffff, Q=1fffd0000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=10, AC=1ffffffff, Q=1ffff4000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=11, AC=1ffffffff, Q=1ffffd000, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=12, AC=1ffffffff, Q=1fffff400, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=13, AC=1ffffffff, Q=1fffffd00, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=14, AC=1ffffffff, Q=1ffffff40, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth RUNNING] count=15, AC=1ffffffff, Q=1ffffffd0, BR[0]=0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000002
+[Booth DONE]                   0
+PC: 00000002 | Fetch: 022081b3 | Decode: 1d0 | rs1: 1 | imm: 22 | rd: 3 | Execute: fffffffa
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = 00000000
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000003 at time 225000
+[Booth IDLE] multiplicand=fffffffe, multiplier=3
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=0, AC=0, Q=6, BR[6]=2
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=1, AC=0, Q=100000001, BR[1]=1fffffffe
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=2, AC=1ffffffff, Q=140000000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=3, AC=1ffffffff, Q=1d0000000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=4, AC=1ffffffff, Q=1f4000000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=5, AC=1ffffffff, Q=1fd000000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=6, AC=1ffffffff, Q=1ff400000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=7, AC=1ffffffff, Q=1ffd00000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=8, AC=1ffffffff, Q=1fff40000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=9, AC=1ffffffff, Q=1fffd0000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=10, AC=1ffffffff, Q=1ffff4000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=11, AC=1ffffffff, Q=1ffffd000, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=12, AC=1ffffffff, Q=1fffff400, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=13, AC=1ffffffff, Q=1fffffd00, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=14, AC=1ffffffff, Q=1ffffff40, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth RUNNING] count=15, AC=1ffffffff, Q=1ffffffd0, BR[0]=0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Ready low, no update REGISTER=00000003
+[Booth DONE]                   0
+PC: 00000003 | Fetch: 02209233 | Decode: 1f0 | rs1: 1 | imm: 22 | rd: 4 | Execute: ffffffff
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = 00000000
+x[5] = 00000000
+[PC] Updated REGISTER to 00000004 at time 405000
+[Booth IDLE] multiplicand=fffffffe, multiplier=3
+PC: 00000004 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = ffffffff
+x[5] = 00000000
+[PC] Updated REGISTER to 00000005 at time 415000
+[Booth RUNNING] count=0, AC=0, Q=6, BR[6]=2
+PC: 00000005 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = ffffffff
+x[5] = 00000000
+[PC] Updated REGISTER to 00000006 at time 425000
+[Booth RUNNING] count=1, AC=0, Q=100000001, BR[1]=1fffffffe
+PC: 00000006 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = ffffffff
+x[5] = 00000000
+[PC] Updated REGISTER to 00000007 at time 435000
+[Booth RUNNING] count=2, AC=1ffffffff, Q=140000000, BR[0]=0
+PC: 00000007 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = ffffffff
+x[5] = 00000000
+[PC] Updated REGISTER to 00000008 at time 445000
+[Booth RUNNING] count=3, AC=1ffffffff, Q=1d0000000, BR[0]=0
+PC: 00000008 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000
+x[1] = fffffffe
+x[2] = 00000003
+x[3] = fffffffa
+x[4] = ffffffff
+x[5] = 00000000
+Simulation complete.
+$finish called at time : 455 ns : File "/home/arun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 62

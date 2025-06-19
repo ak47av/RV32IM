@@ -49,7 +49,7 @@ end
         rst = 0;
 
         // Run a few cycles
-        repeat (40) begin
+        repeat (45) begin
             @(posedge clk);
             // Optionally monitor internal state
             $display("PC: %h | Fetch: %h | Decode: %h | rs1: %0d | imm: %0h | rd: %0d | Execute: %h",
