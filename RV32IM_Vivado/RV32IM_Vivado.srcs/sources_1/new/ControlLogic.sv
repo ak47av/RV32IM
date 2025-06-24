@@ -2,8 +2,6 @@
 
 module ControlLogic #(parameter IN=10, parameter OUT=10) (
     input logic [31:0] ins,
-    input logic clk,
-    input logic rst,
     output logic [4:0] aluControl,
     output logic [2:0] immSel,
     output logic regwen,
@@ -39,8 +37,8 @@ module ControlLogic #(parameter IN=10, parameter OUT=10) (
             10'b0010001100: control = 10'b0010010000;
             10'b0100001100: control = 10'b1111010000;
             10'b0100101100: control = 10'b1111110000;
-            10'b0101001100: control = 10'b1000010000;
-            10'b0101101100: control = 10'b1000110000;
+            10'b0101001100: control = 10'b1100010000;
+            10'b0101101100: control = 10'b1100110000;
             10'b0110001100: control = 10'b1001010000;
             10'b0110101100: control = 10'b1001110000;
             10'b0111001100: control = 10'b1010010000;

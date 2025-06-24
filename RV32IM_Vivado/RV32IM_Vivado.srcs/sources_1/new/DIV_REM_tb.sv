@@ -2,7 +2,7 @@ module DIV_REM_tb();
     logic clk, rst;
     logic [1:0] op;
     logic [31:0] numerator, denominator;
-    logic [31:0] quotient, remainder;
+    logic [31:0] out;
     logic done;
 
     SRT2 uut (.*);
@@ -20,21 +20,21 @@ module DIV_REM_tb();
         op = 2'b00;
         numerator = 20; denominator = 5;
         wait(done);
-        assert(quotient === 4) else begin
-            $display("[DIV] FAIL: 20 / 5 = %0d (Expected: 4)", quotient);
+        assert(out === 4) else begin
+            $display("[DIV] FAIL: 20 / 5 = %0d (Expected: 4)", out);
             $finish;
         end
-        $display("[DIV] PASS: 20 / 5 = %0d", quotient);
+        $display("[DIV] PASS: 20 / 5 = %0d", out);
 
         rst = 1;
         #10 rst = 0;
         numerator = -20; denominator = 5;
         wait(done);
-        assert(quotient === -4) else begin
-            $display("[DIV] FAIL: -20 / 5 = %0d (Expected: -4)", quotient);
+        assert(out === -4) else begin
+            $display("[DIV] FAIL: -20 / 5 = %0d (Expected: -4)", out);
             $finish;
         end
-        $display("[DIV] PASS: -20 / 5 = %0d", quotient);
+        $display("[DIV] PASS: -20 / 5 = %0d", out);
 
         rst = 1;
         #10 rst = 0;
@@ -42,11 +42,11 @@ module DIV_REM_tb();
         op = 2'b01;
         numerator = 32'hFFFFFFF0; denominator = 16;
         wait(done);
-        assert(quotient === 32'h0FFFFFFF) else begin
-            $display("[DIVU] FAIL: 0xFFFFFFF0 / 16 = 0x%0h (Expected: 0x0FFFFFFF)", quotient);
+        assert(out === 32'h0FFFFFFF) else begin
+            $display("[DIVU] FAIL: 0xFFFFFFF0 / 16 = 0x%0h (Expected: 0x0FFFFFFF)", out);
             $finish;
         end
-        $display("[DIVU] PASS: 0xFFFFFFF0 / 16 = 0x%0h", quotient);
+        $display("[DIVU] PASS: 0xFFFFFFF0 / 16 = 0x%0h", out);
 
         rst = 1;
         #10 rst = 0;
@@ -54,11 +54,11 @@ module DIV_REM_tb();
         op = 2'b10;
         numerator = -7; denominator = 3;
         wait(done);
-        assert(remainder === -1) else begin
-            $display("[REM] FAIL: -7 %% 3 = %0d (Expected: -1)", remainder);
+        assert(out === -1) else begin
+            $display("[REM] FAIL: -7 %% 3 = %0d (Expected: -1)", out);
             $finish;
         end
-        $display("[REM] PASS: -7 %% 3 = %0d", remainder);
+        $display("[REM] PASS: -7 %% 3 = %0d", out);
 
         rst = 1;
         #10 rst = 0;
@@ -66,11 +66,11 @@ module DIV_REM_tb();
         op = 2'b11;
         numerator = 7; denominator = 3;
         wait(done);
-        assert(remainder === 1) else begin
-            $display("[REMU] FAIL: 7 %% 3 = %0d (Expected: 1)", remainder);
+        assert(out === 1) else begin
+            $display("[REMU] FAIL: 7 %% 3 = %0d (Expected: 1)", out);
             $finish;
         end
-        $display("[REMU] PASS: 7 %% 3 = %0d", remainder);
+        $display("[REMU] PASS: 7 %% 3 = %0d", out);
         
         #100;
 
