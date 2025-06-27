@@ -36,6 +36,16 @@ module SRT2 #(parameter N=32)(
     assign abs_numerator = is_neg_numerator ? -numerator : numerator;
     assign abs_denominator = is_neg_denominator ? -denominator : denominator;
     
+    // Debug: Display operation type detection
+    always @(*) begin
+        $display("[SRT2] Operation decode:");
+        $display("  op=%2b, signed_div=%b, is_rem=%b", op, signed_div, is_rem);
+        $display("  Numerator: %h (%s)", numerator, is_neg_numerator ? "negative" : "positive");
+        $display("  Denominator: %h (%s)", denominator, is_neg_denominator ? "negative" : "positive");
+        $display("  Absolute Numerator: %h", abs_numerator);
+        $display("  Absolute Denominator: %h", abs_denominator);
+    end
+    
     always_ff @(posedge clk) begin
         if(rst) begin
             state <= IDLE;
@@ -53,19 +63,19 @@ module SRT2 #(parameter N=32)(
         end else begin
             case(state)
                 IDLE: begin
-                    if(denominator == 0) begin
+                    if(abs_denominator == 0) begin
                         remainder <= numerator;
                         quotient <= is_rem ? numerator : {N{1'b1}};
-                        done <= 1;
-                        state <= IDLE;
+                        //done <= 1;
+                        state <= DONE;
                     end else begin
                          //$display("[SRT] Starting %s operation: 0x%h / 0x%h", 
                                 //op[1] ? (op[0] ? "REMU" : "REM") : (op[0] ? "DIVU" : "DIV"),
                                 //numerator, denominator);
                                 
                         // Calculate normalization shift amount
-                        shift_result[4] = (denominator[31:16] == 16'b0);
-                        val16 = shift_result[4] ? denominator[15:0] : denominator[31:16];
+                        shift_result[4] = (abs_denominator[31:16] == 16'b0);
+                        val16 = shift_result[4] ? abs_denominator[15:0] : abs_denominator[31:16];
                         shift_result[3] = (val16[15:8] == 8'b0);
                         val8 = shift_result[3] ? val16[7:0] : val16[15:8];
                         shift_result[2] = (val8[7:4] == 4'b0);
@@ -76,8 +86,8 @@ module SRT2 #(parameter N=32)(
                         
                         // Initialize registers
                         R = 0;
-                        Q = signed_div ? abs_numerator : numerator;
-                        B = signed_div ? abs_denominator : denominator;
+                        Q = abs_numerator;
+                        B = abs_denominator;
                         {R, Q} = {R,Q} << shift_result;
                         B = B << shift_result;
                         
@@ -137,12 +147,7 @@ module SRT2 #(parameter N=32)(
                             quotient <= Q;
                             remainder <= R[N-1:0]; 
                         end 
-//                        $display("[SRT] Final results:");
-//                        $display("      Quotient: 0x%h", quotient);
-//                        $display("      Remainder: 0x%h", remainder);
-                        //out <= op[1] ? remainder : quotient;
                         state <= DONE;
-                        //done <= 1;
                     end
                     count <= count + 1;
                 end
