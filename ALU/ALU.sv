@@ -10,26 +10,37 @@ module ALU(
     output logic ready
     );
     
-    logic [31:0] multiplicand, multiplier;
-    logic [63:0] muldivResult;
-    logic muldivDone;
-    logic is_muldiv, is_muldiv_d;
-    logic boothRst;
+    logic [63:0] mul_result;
+    logic [31:0] div_rem_result;
+    logic [1:0] div_rem_op;
+    logic mul_done, div_done;
     
     assign is_muldiv = sel[4];
-    assign ready = (is_muldiv == 0) || muldivDone; // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
-    assign boothRst = is_muldiv & ~is_muldiv_d;    // SIGNAL TO RESET BOOTH MULTIPLIER
+    assign is_mul = is_muldiv && sel[3];
+    assign ready = (is_muldiv == 0) ? 1'b1 : (is_mul ? mul_done : div_done); // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
+    
     
     Booth4 booth_multiplier(
         .clk(clk),
-        .rst(boothRst),
-        .multiplicand(multiplicand),
-        .multiplier(multiplier),
-        .out(muldivResult),
-        .done(muldivDone)
+        .rst(rst),
+        .multiplicand(dataA),
+        .multiplier(dataB),
+        .out(mul_result),
+        .done(mul_done)
     );
     
-    always @(*) begin
+    SRT2 SRT_divider(
+        .rst(rst),
+        .clk(clk),
+        .numerator(dataA),
+        .denominator(dataB),
+        .op(div_rem_op),
+        .out(div_rem_result),
+        .done(div_done)
+    );
+    
+    always_comb begin
+        div_rem_op = 2'b00; // to prevent an inferred latch
         case(sel)
             'h0: dataD = dataA + dataB;         // ADD  - Addition
             'h1: dataD = dataA << dataB[4:0];   // SLL  - Shift left logical
@@ -46,37 +57,58 @@ module ALU(
             'hC: dataD = $unsigned(dataA) >= $unsigned(dataB) ? 1:0; // GEU - Greater than unsgined
             'hD: dataD = dataA >>> dataB[4:0];   // SRA - Shift right arithmetic 
             'h1E: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = muldivResult[31:0];   // MUL - multiply and produce lower 32 bits
+                //$display("[ALU] Beginning MUL");
+                if(mul_done) begin 
+                    dataD = mul_result[31:0];
+                end
                 else dataD = 32'h00000000; 
             end
             'h1F: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = $signed(muldivResult[63:32]);   // MULH - multiply and produce upper 32 bits
+                //$display("[ALU] Beginning MULH");
+                if(mul_done) begin
+                    dataD = $signed(mul_result[63:32]);
+                end
                 else dataD = 32'h00000000; 
             end
-            'h10: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = muldivResult[63:32];   // MULHU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+//            'h18: begin
+//                if(mul_done)dataD = mul_result[63:32];   // MULHU - multiply and produce upper 32 bits
+//                else dataD = 32'h00000000; 
+//            end
+//            'h19: begin
+//                if(mul_done)dataD = $signed(mul_result[63:32]);   // MULHSU - multiply and produce upper 32 bits
+//                else dataD = 32'h00000000; 
+//            end
+            'h12: begin
+                div_rem_op = 2'b00;
+                if(div_done) begin 
+                    dataD = div_rem_result;
+                end
+                else dataD = 32'h00000000;
             end
-            'h11: begin
-                multiplicand = dataA;
-                multiplier = dataB;
-                if(muldivDone)dataD = $signed(muldivResult[63:32]);   // MULHSU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+            'h13: begin
+                div_rem_op = 2'b01;
+                if(div_done) begin 
+                    dataD = div_rem_result;
+                end
+                else dataD = 32'h00000000;
+            end
+            'h14: begin
+                div_rem_op = 2'b10;
+                if(div_done) begin 
+                    dataD = div_rem_result;
+                end
+                else dataD = 32'h00000000;
+            end
+            'h15: begin
+                div_rem_op = 2'b11;
+                if(div_done) begin 
+                    dataD = div_rem_result;
+                end
+                else dataD = 32'h00000000;
             end
             default: dataD = 32'hDEADBEEF;
         endcase
     end
     
-    always_ff @(posedge clk or posedge rst) begin
-        //$display("[ALU DEBUG] sel = %b, ready = %b", sel, ready);
-        if(rst) is_muldiv_d <= 0;
-        else is_muldiv_d <= is_muldiv;
-    end
     
 endmodule

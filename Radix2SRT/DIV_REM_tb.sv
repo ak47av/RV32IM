@@ -1,0 +1,80 @@
+module DIV_REM_tb();
+    logic clk, rst;
+    logic [1:0] op;
+    logic [31:0] numerator, denominator;
+    logic [31:0] out;
+    logic done;
+
+    SRT2 uut (.*);
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        rst = 1;
+        #10 rst = 0;
+
+        // Test DIV (signed division)
+        op = 2'b00;
+        numerator = 20; denominator = 5;
+        wait(done);
+        assert(out === 4) else begin
+            $display("[DIV] FAIL: 20 / 5 = %0d (Expected: 4)", out);
+            $finish;
+        end
+        $display("[DIV] PASS: 20 / 5 = %0d", out);
+
+        rst = 1;
+        #10 rst = 0;
+        numerator = -20; denominator = 5;
+        wait(done);
+        assert(out === -4) else begin
+            $display("[DIV] FAIL: -20 / 5 = %0d (Expected: -4)", out);
+            $finish;
+        end
+        $display("[DIV] PASS: -20 / 5 = %0d", out);
+
+        rst = 1;
+        #10 rst = 0;
+        // Test DIVU (unsigned division)
+        op = 2'b01;
+        numerator = 32'hFFFFFFF0; denominator = 16;
+        wait(done);
+        assert(out === 32'h0FFFFFFF) else begin
+            $display("[DIVU] FAIL: 0xFFFFFFF0 / 16 = 0x%0h (Expected: 0x0FFFFFFF)", out);
+            $finish;
+        end
+        $display("[DIVU] PASS: 0xFFFFFFF0 / 16 = 0x%0h", out);
+
+        rst = 1;
+        #10 rst = 0;
+        // Test REM (signed remainder)
+        op = 2'b10;
+        numerator = -7; denominator = 3;
+        wait(done);
+        assert(out === -1) else begin
+            $display("[REM] FAIL: -7 %% 3 = %0d (Expected: -1)", out);
+            $finish;
+        end
+        $display("[REM] PASS: -7 %% 3 = %0d", out);
+
+        rst = 1;
+        #10 rst = 0;
+        // Test REMU (unsigned remainder)
+        op = 2'b11;
+        numerator = 7; denominator = 3;
+        wait(done);
+        assert(out === 1) else begin
+            $display("[REMU] FAIL: 7 %% 3 = %0d (Expected: 1)", out);
+            $finish;
+        end
+        $display("[REMU] PASS: 7 %% 3 = %0d", out);
+        
+        #100;
+
+        $display("All tests passed!");
+        $finish;
+    end
+endmodule

@@ -12,15 +12,13 @@ module RegisterFile(
     output logic [31:0] rs2
     );
     
-    logic [31:0] x [31:0];
-    
-    assign x[0] = 0;
+    logic [31:0] x [1:31];
     
     // Write logic
     always_ff @(posedge clk) begin
         if (rst) begin
             // Initialize all registers to 0
-            for (int i = 0; i < 32; i++) begin
+            for (int i = 1; i < 32; i++) begin
                 x[i] <= 32'd0;
             end
         end else begin

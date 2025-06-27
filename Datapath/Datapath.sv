@@ -2,18 +2,19 @@
 
 module Datapath(
     input logic clk,
-    input logic rst
+    input logic rst,
+    output logic out
     );
     
     logic [31:0] ins;
     logic [4:0] rsi1, rsi2, rdi;
     
-    logic [31:0] outPCPlus1, outPC;
-    logic [31:0] ready;
+    logic [31:0] outPCPlus1, outPC, prev_outPC;
+    logic [31:0] PC_changed_mask;
+    logic PC_changed, ready;
     
     logic regwen, bsel;
     logic [4:0] ALUselect;
-    //logic [2:0] Mselect;
     logic [2:0] IMMselect;
     
     logic [31:0] immediateValue;
@@ -29,8 +30,8 @@ module Datapath(
     assign dataB = (bsel) ? immediateValue : rs2;
     assign rd = ALUoutput;
     
-    
-    
+    assign out = 1;
+        
     ProgramCounter PC(
                     .inPC(outPCPlus1), 
                     .clk(clk), 
@@ -39,17 +40,17 @@ module Datapath(
                     .outPC(outPC),
                     .ready(ready)
                     );
+                    
+    assign PC_changed_mask = prev_outPC ^ outPC;
+    assign PC_changed = |PC_changed_mask;
     
-    InstructionMemory ins_mem(
-                        .addr(outPC[4:0]), 
-                        .clk(clk), 
+    (* keep = "true" *) InstructionMemory ins_mem(
+                        .addr(outPC[4:0]),
                         .ins_out(ins)
                         );
     
-    ControlLogic ctrlLogic(
+    (* keep = "true" *) ControlLogic ctrlLogic(
         .ins(ins),
-        .clk(clk),
-        .rst(rst),
         .aluControl(ALUselect),
         .immSel(IMMselect),
         .regwen(regwen),
@@ -68,7 +69,7 @@ module Datapath(
                 .rs2(rs2)
                 );
     
-    ImmediateGenerator immGen(
+    (* keep = "true" *) ImmediateGenerator immGen(
                             .ins(ins),
                             .immSel(IMMselect),
                             .imm31_0(immediateValue)
@@ -76,7 +77,7 @@ module Datapath(
     
     ALU alu(
             .clk(clk),
-            .rst(rst),
+            .rst(PC_changed),
             .dataA(rs1),
             .dataB(dataB),
             .sel(ALUselect),
@@ -84,7 +85,9 @@ module Datapath(
             .ready(ready)
         );
     
-    
+    always_ff @(posedge clk) begin
+       prev_outPC <= outPC;
+    end
     
 endmodule
 

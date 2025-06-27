@@ -22,12 +22,12 @@ module ProgramCounter(
     always @(posedge clk) begin
     if (rst) begin
         REGISTER <= 0;
-        $display("[PC] Reset REGISTER to 0");
+        //$display("[PC] Reset REGISTER to 0");
     end else if (ready) begin
         REGISTER <= inPC;
-        $display("[PC] Updated REGISTER to %h at time %0t", inPC, $time);
+        //$display("[PC] Updated REGISTER to %h at time %0t", inPC, $time);
     end else begin
-        $display("[PC] Ready low, no update REGISTER=%h", REGISTER);
+       // $display("[PC] Ready low, no update REGISTER=%h", REGISTER);
     end
 end
     

@@ -5,6 +5,7 @@ module Datapath_tb;
     // Clock and reset
     logic clk;
     logic rst;
+   
 
     // Instantiate the DUT
     Datapath dut (
@@ -32,7 +33,8 @@ end
     task print_registers;
     begin
         $display("Register file state:");
-        for (int i = 0; i < 6; i++) begin
+        $display("x[0] = 00000000 (hardwired)");
+        for (int i = 1; i < 10; i++) begin
             $display("x[%0d] = %h", i, dut.registers.x[i]);
         end
     end
@@ -48,14 +50,18 @@ end
         #15;
         rst = 0;
 
-        // Run a few cycles
-        repeat (40) begin
-            @(posedge clk);
-            // Optionally monitor internal state
-            $display("PC: %h | Fetch: %h | Decode: %h | rs1: %0d | imm: %0h | rd: %0d | Execute: %h",
-         dut.outPC, dut.ins, control_agg, dut.rsi1, dut.immediateValue, dut.rdi, dut.ALUoutput);
-
-            print_registers();  
+        // Loop until PC reaches 32
+        while (dut.outPC != 32) begin
+            @(posedge clk); // Wait for next clock edge
+        
+            if(dut.PC_changed) begin
+                // Display PC, instruction, and register values
+                $display("PC: %h | Fetch: %h | Decode: %h | rs1: %0d | imm: %0h | rd: %0d | Execute: %h",
+                    dut.outPC, dut.ins, control_agg, dut.rsi1, dut.immediateValue, dut.rdi, dut.ALUoutput);
+        
+                // Print register file contents (assuming `print_registers()` is defined)
+                print_registers();
+            end
         end
 
         $display("Simulation complete.");
