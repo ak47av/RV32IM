@@ -1,0 +1,43 @@
+`timescale 1ns / 1ps
+
+module RegisterFile_tb(
+
+    );
+    
+    logic clk;
+    logic [4:0] rsi1;
+    logic [4:0] rsi2;
+    logic [4:0] rdi;
+    logic [31:0] rd;
+    logic write_enable;
+    logic [31:0] rs1;
+    logic [31:0] rs2;
+    
+    RegisterFile registers(
+        .clk(clk),
+        .rs1(rs1),
+        .rs2(rs2),
+        .rsi1(rsi1),
+        .rsi2(rsi2),
+        .rd(rd),
+        .rdi(rdi),
+        .write_enable(write_enable)
+    );
+    
+    always #5 clk = ~clk;
+    
+    initial begin
+        clk = 0;
+        rd = 'h12345; rdi = 4; #5;
+        rsi1 = 4; write_enable = 1; #5; 
+        if(rs1 != 'h12345) $error("Wrong!");
+        
+        rd = 'h98765; rdi = 3; #5;
+        rsi2 = 3; write_enable = 1; #5; 
+        if(rs1 != 'h98765) $error("Wrong!");
+        
+    end
+    
+endmodule
+
+
