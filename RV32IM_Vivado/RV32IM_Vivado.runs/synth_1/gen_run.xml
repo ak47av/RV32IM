@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1750780395" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Datapath.dcp">
-  <File Type="PA-TCL" Name="Datapath.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1751916334" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Datapath.dcp">
   <File Type="REPORTS-TCL" Name="Datapath_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Datapath.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="Datapath_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="Datapath_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Datapath_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="Datapath.tcl"/>
+  <File Type="RDS-RDS" Name="Datapath.vds"/>
   <File Type="RDS-DCP" Name="Datapath.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Datapath_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Datapath_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU.sv">
@@ -109,6 +106,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/DIV_REM_tb.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/RSplitter.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -117,7 +122,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/DIV_REM_tb.sv">
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -133,7 +138,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../../Downloads/Cora-Z7-07S-Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../Downloads/Cora-Z7-07S-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -144,6 +156,8 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_2"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -157,4 +171,5 @@
       <Option Id="FlattenHierarchy">1</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>

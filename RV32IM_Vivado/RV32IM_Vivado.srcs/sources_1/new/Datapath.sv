@@ -1,9 +1,13 @@
 `timescale 1ns / 1ps
 
 module Datapath(
+    (* mark_debug = "true", keep = "true" *)
     input logic clk,
-    input logic rst,
-    output logic out
+    (* mark_debug = "true", keep = "true" *)
+    input logic rst
+//    (* DONT_TOUCH = "true" *)  // Prevent optimization
+//    (* MARK_DEBUG = "true" *)   // Optional: Signal can be probed with ILA
+    //,output logic out
     );
     
     logic [31:0] ins;
@@ -30,7 +34,19 @@ module Datapath(
     assign dataB = (bsel) ? immediateValue : rs2;
     assign rd = ALUoutput;
     
-    assign out = 1;
+   // assign out = ALUoutput;
+    
+    
+    
+    ila_0 cora_ila (
+	.clk(clk), // input wire clk
+
+
+	.probe0(outPC), // input wire [31:0]  probe0  
+	.probe1(ALUoutput), // input wire [31:0]  probe1 
+	.probe2(clk), // input wire [0:0]  probe2 
+	.probe3(rst) // input wire [0:0]  probe3
+);
         
     ProgramCounter PC(
                     .inPC(outPCPlus1), 

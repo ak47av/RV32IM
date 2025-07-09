@@ -322,4 +322,139 @@ PC: 00000017 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = 00000012
-x[2
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 00000018 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 00000019 | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001a | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001b | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001c | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001d | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001e | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 0000001f | Fetch: 00000013 | Decode: 011 | rs1: 0 | imm: 0 | rd: 0 | Execute: 00000000
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+[Booth] Resetting Booth multiplier.
+[SRT IDLE] Reset complete.
+PC: 00000020 | Fetch: 01200093 | Decode: 011 | rs1: 0 | imm: 12 | rd: 1 | Execute: 00000012
+Register file state:
+x[0] = 00000000 (hardwired)
+x[1] = 00000012
+x[2] = ffffffc8
+x[3] = fffffc10
+x[4] = ffffffff
+x[5] = fffffffd
+x[6] = fffffffe
+x[7] = 0e38e38b
+x[8] = 00000002
+x[9] = 00000000
+Simulation complete.
+$finish called at time : 2155 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 68

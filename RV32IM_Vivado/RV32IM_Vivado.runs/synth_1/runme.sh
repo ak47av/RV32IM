@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/sarun/Documents/RV32IM_Vivado/RV32IM_Vivado.runs/synth_1'
+HD_PWD='C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
