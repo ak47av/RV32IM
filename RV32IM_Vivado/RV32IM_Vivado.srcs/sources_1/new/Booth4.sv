@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module Booth4 #(parameter N=32)(
+module Booth4 #(parameter N=34)(
     input logic rst, clk,
     input logic [N-1:0] multiplicand, multiplier,
     output logic [2*N-1:0] out,
@@ -25,7 +25,7 @@ module Booth4 #(parameter N=32)(
             count <= 0;
             done <= 0;
             out <= 0;
-            $display("[Booth] Resetting Booth multiplier.");
+            //$display("[Booth] Resetting Booth multiplier.");
         end else begin
             case(state)
                 IDLE: begin
@@ -48,9 +48,9 @@ module Booth4 #(parameter N=32)(
                 
                 RUNNING: begin
                     if(count < (N >> 1)) begin
-                    //$display("[Booth RUNNING] count=%0d, AC=%0h, Q=%0h, BR[%0d]=%0h", count, AC, Q, Q[2:0], BR[Q[2:0]]);
+                        //$display("[Booth RUNNING] count=%0d, AC=%09h, Q=%09h, BR[%0d]=%09h", count, AC, Q, Q[2:0], BR[Q[2:0]]);
                         AC = AC + BR[Q[2:0]];
-                      //  $display("[Booth RUNNING] count=%0d, AC=%0h, Q=%0h, BR[%0d]=%0h", count, AC, Q, Q[2:0], BR[Q[2:0]]);
+                        //$display("[Booth RUNNING] count=%0d, AC=%09h, Q=%09h, BR[%0d]=%09h", count, AC, Q, Q[2:0], BR[Q[2:0]]);
                         {AC, Q} = {{2{AC[N]}}, AC, Q[N:2]};
                         count = count + 1;                    
                         
@@ -59,7 +59,7 @@ module Booth4 #(parameter N=32)(
                         //out <= {Q[N:1]};
                         done <= 1;
                         state <= IDLE;
-                        $display("[Booth DONE]", out);
+//                        $display("[Booth DONE]", out);
                     end
                 end
                 

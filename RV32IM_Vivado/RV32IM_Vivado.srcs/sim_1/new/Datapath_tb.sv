@@ -13,11 +13,11 @@ module Datapath_tb;
         .rst(rst)
     );
     
-    logic [8:0] control_agg;
+    logic [9:0] control_agg;
 
 always_comb begin
     control_agg = {
-        dut.ALUselect,     // 4 bits
+        dut.ALUselect,     // 5 bits
         dut.regwen,        // 1 bit
         dut.IMMselect,     // 3 bits
         dut.bsel           // 1 bit
@@ -34,7 +34,7 @@ end
     begin
         $display("Register file state:");
         $display("x[0] = 00000000 (hardwired)");
-        for (int i = 1; i < 10; i++) begin
+        for (int i = 1; i < 11; i++) begin
             $display("x[%0d] = %h", i, dut.registers.x[i]);
         end
     end
@@ -56,8 +56,8 @@ end
         
             if(dut.PC_changed) begin
                 // Display PC, instruction, and register values
-                $display("PC: %h | Fetch: %h | Decode: %h | rs1: %0d | imm: %0h | rd: %0d | Execute: %h",
-                    dut.outPC, dut.ins, control_agg, dut.rsi1, dut.immediateValue, dut.rdi, dut.ALUoutput);
+                $display("NextPC: %h | Fetch: %h | Decode: %h | Execute: %h",
+                    dut.outPC, dut.ins, control_agg, dut.ALUoutput);
         
                 // Print register file contents (assuming `print_registers()` is defined)
                 print_registers();

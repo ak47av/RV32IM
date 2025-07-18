@@ -4,13 +4,10 @@ module SRT_tb();
     
     parameter N = 32;
     logic rst, clk;
-    logic unsigned [N-1:0] numerator, denominator;
-    logic unsigned [N-1:0] quotient, remainder;
-    logic [7:0] [N:0] BR;
-    logic [N:0] R;
-    logic [N-1:0] Q;
-    logic [2:0] top3bits;
-    logic [5:0] count;
+    logic [N-1:0] numerator, denominator;
+    logic [N-1:0] quotient, remainder;
+    logic [1:0] op;
+    logic [N-1:0] out;
     logic done;
     
     SRT2 #(.N(N)) uut (
@@ -18,13 +15,7 @@ module SRT_tb();
         .rst(rst),
         .numerator(numerator),
         .denominator(denominator),
-        .quotient(quotient),
-        .remainder(remainder),
-        .top3bits(top3bits),
-        .BR(BR),
-        .R(R),
-        .Q(Q),
-        .count(count),
+        
         .done(done)
     );
     

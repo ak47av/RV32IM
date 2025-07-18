@@ -10,7 +10,10 @@ module ALU(
     output logic ready
     );
     
-    logic [63:0] mul_result;
+    logic [33:0] multiplicand, multiplier;
+    //logic [31:0] dividend, divisor;
+    
+    logic [67:0] mul_result;
     logic [31:0] div_rem_result;
     logic [1:0] div_rem_op;
     logic mul_done, div_done;
@@ -19,27 +22,28 @@ module ALU(
     assign is_mul = is_muldiv && sel[3];
     assign ready = (is_muldiv == 0) ? 1'b1 : (is_mul ? mul_done : div_done); // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
     
-    
     Booth4 booth_multiplier(
         .clk(clk),
         .rst(rst),
-        .multiplicand(dataA),
-        .multiplier(dataB),
+        .multiplicand(multiplicand),
+        .multiplier(multiplier),
         .out(mul_result),
         .done(mul_done)
     );
     
-    SRT2 SRT_divider(
+    NonRestoringDivider nrd(
         .rst(rst),
         .clk(clk),
-        .numerator(dataA),
-        .denominator(dataB),
+        .dividend(dataA),
+        .divisor(dataB),
         .op(div_rem_op),
         .out(div_rem_result),
         .done(div_done)
     );
     
     always_comb begin
+        multiplicand = 0;
+        multiplier = 0;
         div_rem_op = 2'b00; // to prevent an inferred latch
         case(sel)
             'h0: dataD = dataA + dataB;         // ADD  - Addition
@@ -57,54 +61,72 @@ module ALU(
             'hC: dataD = $unsigned(dataA) >= $unsigned(dataB) ? 1:0; // GEU - Greater than unsgined
             'hD: dataD = dataA >>> dataB[4:0];   // SRA - Shift right arithmetic 
             'h1E: begin
-                //$display("[ALU] Beginning MUL");
+                //MUL
+                multiplicand = {2'b00, dataA};
+                multiplier = {2'b00, dataB};
                 if(mul_done) begin 
                     dataD = mul_result[31:0];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h1F: begin
-                //$display("[ALU] Beginning MULH");
+                //MULH
+                multiplicand = {{2{dataA[31]}}, dataA};
+                multiplier = {{2{dataB[31]}}, dataB};
                 if(mul_done) begin
-                    dataD = $signed(mul_result[63:32]);
+                    dataD = mul_result[63:32];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
-//            'h18: begin
-//                if(mul_done)dataD = mul_result[63:32];   // MULHU - multiply and produce upper 32 bits
-//                else dataD = 32'h00000000; 
-//            end
-//            'h19: begin
-//                if(mul_done)dataD = $signed(mul_result[63:32]);   // MULHSU - multiply and produce upper 32 bits
-//                else dataD = 32'h00000000; 
-//            end
+            'h18: begin
+                //MULHU
+                multiplicand = {2'b00, dataA};
+                multiplier = {2'b00, dataB};
+                if(mul_done)dataD = mul_result[63:32];   // MULHU - multiply and produce upper 32 bits
+                else dataD = '0; 
+            end
+            'h19: begin
+                //MULHSU
+                multiplicand = {{2{dataA[31]}}, dataA};
+                multiplier = {2'b00, dataB};
+                if(mul_done)dataD = mul_result[63:32];   // MULHSU - multiply and produce upper 32 bits
+                else dataD = '0; 
+            end
             'h12: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b00;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h13: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b01;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h14: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b10;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h15: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b11;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             default: dataD = 32'hDEADBEEF;
         endcase

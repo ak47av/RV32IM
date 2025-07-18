@@ -1,7 +1,7 @@
 Vivado Simulator v2024.2.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Datapath_tb_behav xil_defaultlib.Datapath_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot ALU_tb_behav xil_defaultlib.ALU_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -9,21 +9,9 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ila_0
-Compiling module xil_defaultlib.ProgramCounter
-Compiling module xil_defaultlib.InstructionMemory
-Compiling module xil_defaultlib.ControlLogic
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.ISplitter
-Compiling module xil_defaultlib.JSplitter
-Compiling module xil_defaultlib.BSplitter
-Compiling module xil_defaultlib.USplitter
-Compiling module xil_defaultlib.SSplitter
-Compiling module xil_defaultlib.ImmediateGenerator
 Compiling module xil_defaultlib.Booth4
-Compiling module xil_defaultlib.SRT2
+Compiling module xil_defaultlib.NonRestoringDivider
 Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.Datapath
-Compiling module xil_defaultlib.Datapath_tb
+Compiling module xil_defaultlib.ALU_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot Datapath_tb_behav
+Built simulation snapshot ALU_tb_behav

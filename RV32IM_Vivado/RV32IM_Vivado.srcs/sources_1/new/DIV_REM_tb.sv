@@ -5,7 +5,7 @@ module DIV_REM_tb();
     logic [31:0] out;
     logic done;
 
-    SRT2 uut (.*);
+    SRT4 uut (.*);
 
     initial begin
         clk = 0;

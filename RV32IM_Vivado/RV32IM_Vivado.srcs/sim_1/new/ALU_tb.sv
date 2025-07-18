@@ -7,6 +7,7 @@ module ALU_tb;
     logic [4:0] sel;
     logic [31:0] dataD;
     logic ready;
+    logic [31:0] A, B;
 
     ALU dut (
         .clk(clk),
@@ -32,9 +33,11 @@ module ALU_tb;
 
     task run_mul_test(input [31:0] a, input [31:0] b, input [4:0] op, string name);
         begin
+            
             dataA = a;
             dataB = b;
             sel = op;
+            reset();
             wait(!ready);
             @(posedge clk);
             wait (ready);
@@ -48,6 +51,7 @@ module ALU_tb;
             dataA = a;
             dataB = b;
             sel = op;
+            reset();
             wait(!ready);
             @(posedge clk);
             wait (ready);
@@ -61,15 +65,16 @@ module ALU_tb;
         reset();
 
         // Test cases
-        //run_mul_test(-32'sd2, 32'sd3, 5'h1E, "MUL   ");       // 3 * 5 = 15 -> lower 32 bits
-        //run_mul_test(-32'sd2, 32'sd3, 5'h11, "MULHSU");      // -2 * 3 = -6 -> upper 32 bits
-        //run_mul_test(-32'sd2, 32'sd3, 5'h1F, "MULH  "); // -2 * -3 = 0
-        //run_mul_test(-32'sd4, -32'sd3, 5'h10, "MULHU "); // -2 * -3 = 0xfffffffb
+        A = 72348; B = 42352;
+//        run_mul_test(A, B, 5'h1E, "MUL   ");
+//        run_mul_test(A, B, 5'h1F, "MULH  ");
+//        run_mul_test(A, B, 5'h18, "MULHU ");
+//        run_mul_test(A, B, 5'h19, "MULHSU");
         
-        //run_div_test(-32'sd56, 32'sd18, 5'h12, "DIV  ");
-        //run_div_test(-32'sd56, 32'sd18, 5'h14, "REM  ");
-        //run_div_test(-32'sd56, 32'sd18, 5'h13, "DIVU  ");
-        //run_div_test(-32'sd56, 32'sd18, 5'h15, "REMU  ");
+        run_div_test(A, B, 5'h12, "DIV  ");
+        run_div_test(A, B, 5'h14, "REM  ");
+//        run_div_test(A, B, 5'h13, "DIVU  ");
+//        run_div_test(A, B, 5'h15, "REMU  ");
 
         $display("All tests finished.");
         $finish;
