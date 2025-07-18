@@ -2,7 +2,7 @@
 sv xil_defaultlib  \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/ALU.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/Booth4.sv" \
-"../../../../RV32IM_Vivado.srcs/sources_1/new/SRT2.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/NonRestoringDivider.sv" \
 "../../../../RV32IM_Vivado.srcs/sim_1/new/ALU_tb.sv" \
 
 # compile glbl module

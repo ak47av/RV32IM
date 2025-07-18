@@ -34,7 +34,7 @@ end
     begin
         $display("Register file state:");
         $display("x[0] = 00000000 (hardwired)");
-        for (int i = 1; i < 10; i++) begin
+        for (int i = 1; i < 11; i++) begin
             $display("x[%0d] = %h", i, dut.registers.x[i]);
         end
     end

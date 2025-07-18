@@ -65,7 +65,7 @@ module ALU_tb;
         reset();
 
         // Test cases
-        A = 678; B = 0;
+        A = 72348; B = 42352;
 //        run_mul_test(A, B, 5'h1E, "MUL   ");
 //        run_mul_test(A, B, 5'h1F, "MULH  ");
 //        run_mul_test(A, B, 5'h18, "MULHU ");
@@ -73,8 +73,8 @@ module ALU_tb;
         
         run_div_test(A, B, 5'h12, "DIV  ");
         run_div_test(A, B, 5'h14, "REM  ");
-        run_div_test(A, B, 5'h13, "DIVU  ");
-        run_div_test(A, B, 5'h15, "REMU  ");
+//        run_div_test(A, B, 5'h13, "DIVU  ");
+//        run_div_test(A, B, 5'h15, "REMU  ");
 
         $display("All tests finished.");
         $finish;

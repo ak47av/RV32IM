@@ -11,6 +11,7 @@ module ALU(
     );
     
     logic [33:0] multiplicand, multiplier;
+    //logic [31:0] dividend, divisor;
     
     logic [67:0] mul_result;
     logic [31:0] div_rem_result;
@@ -30,17 +31,19 @@ module ALU(
         .done(mul_done)
     );
     
-    SRT2 SRT_divider(
+    NonRestoringDivider nrd(
         .rst(rst),
         .clk(clk),
-        .numerator(dataA),
-        .denominator(dataB),
+        .dividend(dataA),
+        .divisor(dataB),
         .op(div_rem_op),
         .out(div_rem_result),
         .done(div_done)
     );
     
     always_comb begin
+        multiplicand = 0;
+        multiplier = 0;
         div_rem_op = 2'b00; // to prevent an inferred latch
         case(sel)
             'h0: dataD = dataA + dataB;         // ADD  - Addition
@@ -64,7 +67,7 @@ module ALU(
                 if(mul_done) begin 
                     dataD = mul_result[31:0];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h1F: begin
                 //MULH
@@ -73,49 +76,57 @@ module ALU(
                 if(mul_done) begin
                     dataD = mul_result[63:32];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h18: begin
                 //MULHU
                 multiplicand = {2'b00, dataA};
                 multiplier = {2'b00, dataB};
                 if(mul_done)dataD = mul_result[63:32];   // MULHU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h19: begin
                 //MULHSU
                 multiplicand = {{2{dataA[31]}}, dataA};
                 multiplier = {2'b00, dataB};
                 if(mul_done)dataD = mul_result[63:32];   // MULHSU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h12: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b00;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h13: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b01;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h14: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b10;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h15: begin
+//                divisor = dataB;
+//                dividend = dataA;
                 div_rem_op = 2'b11;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             default: dataD = 32'hDEADBEEF;
         endcase

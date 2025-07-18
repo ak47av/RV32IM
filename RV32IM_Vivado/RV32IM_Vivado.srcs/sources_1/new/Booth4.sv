@@ -59,7 +59,7 @@ module Booth4 #(parameter N=34)(
                         //out <= {Q[N:1]};
                         done <= 1;
                         state <= IDLE;
-                        $display("[Booth DONE]", out);
+//                        $display("[Booth DONE]", out);
                     end
                 end
                 
