@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// Unverified implementation and division is not always accurate
 module SRT4 #(parameter N=32)(
     input logic rst, clk,
     input logic [N-1:0] numerator, denominator,

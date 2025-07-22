@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
-
+// Unverified implementation of Nonrestoring division
+// Implemented to compare LUT utilization against SRT division
 module NonRestoringDivider #(parameter N=32)(
     input logic clk,
     input logic rst,
@@ -53,7 +54,7 @@ module NonRestoringDivider #(parameter N=32)(
                     else begin
                         // Initialize registers                        
                         A <= abs_dividend;
-                        B <= abs_divisor; 
+                        B <= (signed_div && is_neg_divisor) ? {1'b1, abs_divisor} : abs_divisor; 
                         P <= 0;                        
                         state <= RUNNING;
                         done <= 0;
@@ -62,8 +63,8 @@ module NonRestoringDivider #(parameter N=32)(
                 end
                 
                 RUNNING: begin
-                    $display("[NRD] Iter %0d: P=0x%h, A=0x%h, B=0x%h", 
-                                    count, P, A, B);
+//                    $display("[NRD] Iter %0d: P=0x%h, A=0x%h, B=0x%h", 
+//                                    count, P, A, B);
                     if(count < N) begin
                         {P, A} = {P, A} << 1;
                         if (P[N]) begin

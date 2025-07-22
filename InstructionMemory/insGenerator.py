@@ -15,12 +15,13 @@ def generate_imem_from_file(input_file="ins.txt", output_file="InstructionMemory
     module_header = f"""
 `timescale 1ns / 1ps
 
+// Supports 2^ADDR_WIDTH instructions, in this case 32 instructions
 module InstructionMemory #(ADDR_WIDTH={addr_width}) (
-    input logic [ADDR_WIDTH-1:0] addr,
-    input logic clk,
-    output logic [31:0] ins_out
+    input logic [ADDR_WIDTH-1:0] addr,  // Supports 2^ADDR_WIDTH instructions, in this case 32 instructions
+    output logic [31:0] ins_out         // Output of the instruction
     );
     
+    // Combinatorial memory logic used instead of using AMD proprietary IP for memory
     always_comb begin
         case(addr)"""
 

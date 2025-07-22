@@ -1,3 +1,5 @@
+#### Outdated ROM Generator, requires modifications to work seamlessly
+#### Copy and paste just the combinational block from the output control_rom.sv file into the ControlLogic.sv file
 import csv
 
 input_csv = "control_rom.csv"

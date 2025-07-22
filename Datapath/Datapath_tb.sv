@@ -6,23 +6,22 @@ module Datapath_tb;
     logic clk;
     logic rst;
    
-
     // Instantiate the DUT
     Datapath dut (
         .clk(clk),
         .rst(rst)
     );
     
+    // To help debug control signals
     logic [9:0] control_agg;
-
-always_comb begin
-    control_agg = {
-        dut.ALUselect,     // 5 bits
-        dut.regwen,        // 1 bit
-        dut.IMMselect,     // 3 bits
-        dut.bsel           // 1 bit
-    };
-end
+    always_comb begin
+        control_agg = {
+            dut.ALUselect,     // 5 bits
+            dut.regwen,        // 1 bit
+            dut.IMMselect,     // 3 bits
+            dut.bsel           // 1 bit
+        };
+    end
 
     // Clock generation
     initial begin
@@ -30,11 +29,12 @@ end
         forever #5 clk = ~clk;  // 10ns clock period
     end
     
+    // Task to print the first 11 registers registers for viewing their contents
     task print_registers;
     begin
         $display("Register file state:");
         $display("x[0] = 00000000 (hardwired)");
-        for (int i = 1; i < 10; i++) begin
+        for (int i = 1; i < 11; i++) begin
             $display("x[%0d] = %h", i, dut.registers.x[i]);
         end
     end

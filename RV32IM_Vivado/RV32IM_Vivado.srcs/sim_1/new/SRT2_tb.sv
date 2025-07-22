@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// To verify operation of SRT division
+// Outdated version of the testbench
 module SRT_tb();
     
     parameter N = 32;
@@ -15,7 +17,6 @@ module SRT_tb();
         .rst(rst),
         .numerator(numerator),
         .denominator(denominator),
-        
         .done(done)
     );
     

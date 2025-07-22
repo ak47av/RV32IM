@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// Refer to ISA for decoding logic
 module ImmediateGenerator(
     input logic [31:0] ins,
     input logic [2:0] immSel,
@@ -18,10 +19,15 @@ module ImmediateGenerator(
     logic imm20;
     logic [19:0] imm31_12;
     
+    // I Type
     ISplitter ispl(.ins(ins), .opcode(), .rd(), .funct3(), .rs1(), .imm11_0(imm11_0));
+    // J Type
     JSplitter jspl(.ins(ins), .opcode(), .rd(), .imm19_12(imm19_12), .imm11(imm11_J), .imm10_1(imm10_1), .imm20(imm20));
+    // B Type
     BSplitter bspl(.ins(ins), .opcode(), .imm11(imm11_B), .imm4_1(imm4_1), .funct3(), .rs1(), .rs2(), .imm10_5(imm10_5), .imm12(imm12));
+    // U Type
     USplitter uspl(.ins(ins), .opcode(), .rd(), .imm31_12(imm31_12));
+    // S Type
     SSplitter sspl(.ins(ins), .opcode(), .imm4_0(imm4_0), .funct3(), .rs1(), .rs2(), .imm11_5(imm11_5));
     
     logic [31:0] iout;
@@ -30,13 +36,14 @@ module ImmediateGenerator(
     logic [31:0] jout;
     logic [31:0] uout;
     
+    // Refer to ISA for immediate decoding logic
     assign iout = {{20{imm11_0[11]}}, imm11_0};
     assign sout = {{20{imm11_5[6]}}, imm11_5, imm4_0};
     assign bout = {{19{imm12}}, imm12, imm11_B, imm10_5, imm4_1, 1'b0};
     assign jout = {{11{imm20}} , imm20, imm19_12 , imm11_J, imm10_1, 1'b0};
     assign uout = {imm31_12, 12'b0};
     
-    always @ (*) begin
+    always_comb begin
         case(immSel)
             3'b000: imm31_0 = iout;
             3'b001: imm31_0 = sout;

@@ -22,6 +22,7 @@ module ALU_tb;
     // Clock generation
     always #5 clk = ~clk;
 
+    // Pulse the reset signal
     task reset();
         begin
             rst = 1;
@@ -30,10 +31,10 @@ module ALU_tb;
             rst = 0;
         end
     endtask
-
+    
+    // Test multiplication
     task run_mul_test(input [31:0] a, input [31:0] b, input [4:0] op, string name);
         begin
-            
             dataA = a;
             dataB = b;
             sel = op;
@@ -46,6 +47,7 @@ module ALU_tb;
         end
     endtask
     
+    // Test division
     task run_div_test(input [31:0] a, input [31:0] b, input [4:0] op, string name);
         begin
             dataA = a;
@@ -65,16 +67,16 @@ module ALU_tb;
         reset();
 
         // Test cases
-        A = 72348; B = 42352;
-//        run_mul_test(A, B, 5'h1E, "MUL   ");
-//        run_mul_test(A, B, 5'h1F, "MULH  ");
-//        run_mul_test(A, B, 5'h18, "MULHU ");
-//        run_mul_test(A, B, 5'h19, "MULHSU");
+        A = 348; B = -352;
+        run_mul_test(A, B, 5'h1E, "MUL   ");
+        run_mul_test(A, B, 5'h1F, "MULH  ");
+        run_mul_test(A, B, 5'h18, "MULHU ");
+        run_mul_test(A, B, 5'h19, "MULHSU");
         
         run_div_test(A, B, 5'h12, "DIV  ");
         run_div_test(A, B, 5'h14, "REM  ");
-//        run_div_test(A, B, 5'h13, "DIVU  ");
-//        run_div_test(A, B, 5'h15, "REMU  ");
+        run_div_test(A, B, 5'h13, "DIVU  ");
+        run_div_test(A, B, 5'h15, "REMU  ");
 
         $display("All tests finished.");
         $finish;

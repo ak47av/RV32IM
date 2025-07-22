@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/ALU.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/BSplitter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/Booth4.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/ControlLogic.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/Datapath.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/ISplitter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/ImmediateGenerator.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/InstructionMemory.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/JSplitter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/LeadingZeroCounter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/ProgramCounter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/RegisterFile.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/SRT2.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/SSplitter.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/USplitter.sv" \
+"../../../../RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
