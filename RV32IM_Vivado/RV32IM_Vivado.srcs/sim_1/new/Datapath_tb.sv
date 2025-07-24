@@ -56,9 +56,10 @@ module Datapath_tb;
         
             if(dut.PC_changed) begin
                 // Display PC, instruction, and register values
-                $display("NextPC: %h | Fetch: %h | Decode: %h | Execute: %h",
-                    dut.outPC, dut.ins, control_agg, dut.ALUoutput);
-        
+//                $display("NextPC: %h | Fetch: %h | Decode: %h | Execute: %h",
+//                    dut.outPC, dut.ins, control_agg, dut.ALUoutput);
+                $display("PC:%h | NextPC: %h | Instruction: %h",
+                    dut.prev_outPC, dut.outPC, dut.ins);
                 // Print register file contents (assuming `print_registers()` is defined)
                 print_registers();
             end

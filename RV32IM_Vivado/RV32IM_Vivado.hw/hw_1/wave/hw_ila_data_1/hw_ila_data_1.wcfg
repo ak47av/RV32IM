@@ -9,15 +9,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="12"></ZoomEndTime>
-      <Cursor1Time time="0"></Cursor1Time>
+      <ZoomStartTime time="171"></ZoomStartTime>
+      <ZoomEndTime time="231"></ZoomEndTime>
+      <Cursor1Time time="192"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="193"></NameColumnWidth>
-      <ValueColumnWidth column_width="177"></ValueColumnWidth>
+      <NameColumnWidth column_width="253"></NameColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
+   <WVObjectSize size="6" />
+   <wave_markers>
+   </wave_markers>
    <wvobject fp_name="clk_IBUF_BUFG" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">clk_IBUF_BUFG</obj_property>
@@ -52,6 +54,13 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">clk_IBUF_BUFG</obj_property>
       <obj_property name="ObjectShortName">clk_IBUF_BUFG</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="ready" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

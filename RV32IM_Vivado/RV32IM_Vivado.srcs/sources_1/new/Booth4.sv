@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-// Radix-4 Booth multiplier performs multiplication in 16+2(setup) cycles
+// Radix-4 Booth multiplier performs multiplication in 16+4(setup) cycles
 module Booth4 #(parameter N=34)(
     input logic rst, clk,
     input logic [N-1:0] multiplicand, multiplier,

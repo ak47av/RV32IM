@@ -4,10 +4,11 @@ module Datapath(
     (* mark_debug = "true", keep = "true" *)
     input logic clk,
     (* mark_debug = "true", keep = "true" *)
-    input logic rst,
-    (* DONT_TOUCH = "true" *)  // Prevent optimization
-    (* MARK_DEBUG = "true" *)   // Optional: Signal can be probed with ILA
-    output logic out
+    input logic rst
+//    ,
+//    (* DONT_TOUCH = "true" *)  // Prevent optimization
+//    (* MARK_DEBUG = "true" *)   // Optional: Signal can be probed with ILA
+//    output logic out
     );
     
     logic [31:0] ins;               // 32-bit instruction
@@ -36,17 +37,18 @@ module Datapath(
     assign dataB = (bsel) ? immediateValue : rs2;   // Switch using bsel
     assign rd = ALUoutput;                          // Store output of ALU in rd
     
-    assign out = ALUoutput;                         // Store output of the ALU for debugging
+    //assign out = ALUoutput;                         // Store output of the ALU for debugging
     
     
     // Enable only if you need debugging on FPGA
-//    ila_0 cora_ila (
-//	.clk(clk), // input wire clk
-//	.probe0(outPC), // input wire [31:0]  probe0  
-//	.probe1(ALUoutput), // input wire [31:0]  probe1 
-//	.probe2(clk), // input wire [0:0]  probe2 
-//	.probe3(rst) // input wire [0:0]  probe3
-//);
+    ila_0 cora_ila (
+        .clk(clk), // input wire clk
+        .probe0(outPC), // input wire [31:0]  probe0  
+        .probe1(ALUoutput), // input wire [31:0]  probe1 
+        .probe2(clk), // input wire [0:0]  probe2 
+        .probe3(rst), // input wire [0:0]  probe3
+        .probe4(ready)
+    );
         
     ProgramCounter PC(
                     .inPC(outPCPlus1), 
@@ -91,9 +93,10 @@ module Datapath(
                             .imm31_0(immediateValue)
                         ); 
     
+   
     ALU alu(
             .clk(clk),
-            .rst(PC_changed),
+            .rst(PC_changed), // ALU is reset every time PC changes
             .dataA(rs1),
             .dataB(dataB),
             .sel(ALUselect),

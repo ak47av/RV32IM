@@ -1,6 +1,6 @@
 Time resolution is 1 ps
 Starting Datapath simulation...
-NextPC: 00000001 | Fetch: 15c00113 | Decode: 011 | Execute: 0000015c
+PC:00000000 | NextPC: 00000001 | Instruction: 15c00113
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -13,7 +13,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000002 | Fetch: 02116233 | Decode: 290 | Execute: 00000000
+PC:00000001 | NextPC: 00000002 | Instruction: 02116233
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -26,7 +26,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000003 | Fetch: 02117333 | Decode: 2b0 | Execute: 00000000
+PC:00000002 | NextPC: 00000003 | Instruction: 02117333
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -39,7 +39,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000004 | Fetch: 021141b3 | Decode: 250 | Execute: 00000000
+PC:00000003 | NextPC: 00000004 | Instruction: 021141b3
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -52,7 +52,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000005 | Fetch: 021152b3 | Decode: 270 | Execute: 00000000
+PC:00000004 | NextPC: 00000005 | Instruction: 021152b3
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -65,7 +65,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000006 | Fetch: 021103b3 | Decode: 3d0 | Execute: 00000000
+PC:00000005 | NextPC: 00000006 | Instruction: 021103b3
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -78,7 +78,7 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000007 | Fetch: 02111433 | Decode: 3f0 | Execute: 00000000
+PC:00000006 | NextPC: 00000007 | Instruction: 02111433
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -91,7 +91,7 @@ x[7] = fffe2180
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000008 | Fetch: 021134b3 | Decode: 330 | Execute: 00000000
+PC:00000007 | NextPC: 00000008 | Instruction: 021134b3
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -104,7 +104,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 00000000
 x[10] = 00000000
-NextPC: 00000009 | Fetch: 02112533 | Decode: 310 | Execute: 00000000
+PC:00000008 | NextPC: 00000009 | Instruction: 02112533
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -117,7 +117,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 00000000
-NextPC: 0000000a | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000009 | NextPC: 0000000a | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -130,7 +130,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000000b | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000a | NextPC: 0000000b | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -143,7 +143,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000000c | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000b | NextPC: 0000000c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -156,7 +156,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000000d | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000c | NextPC: 0000000d | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -169,7 +169,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000000e | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000d | NextPC: 0000000e | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -182,7 +182,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000000f | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000e | NextPC: 0000000f | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -195,7 +195,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000010 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000000f | NextPC: 00000010 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -208,7 +208,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000011 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000010 | NextPC: 00000011 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -221,7 +221,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000012 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000011 | NextPC: 00000012 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -234,7 +234,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000013 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000012 | NextPC: 00000013 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -247,7 +247,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000014 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000013 | NextPC: 00000014 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -260,7 +260,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000015 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000014 | NextPC: 00000015 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -273,7 +273,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000016 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000015 | NextPC: 00000016 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -286,7 +286,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000017 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000016 | NextPC: 00000017 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -299,7 +299,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000018 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000017 | NextPC: 00000018 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -312,7 +312,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000019 | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000018 | NextPC: 00000019 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -325,7 +325,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001a | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:00000019 | NextPC: 0000001a | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -338,7 +338,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001b | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000001a | NextPC: 0000001b | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -351,7 +351,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001c | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000001b | NextPC: 0000001c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -364,7 +364,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001d | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000001c | NextPC: 0000001d | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -377,7 +377,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001e | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000001d | NextPC: 0000001e | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -390,7 +390,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 0000001f | Fetch: 00000013 | Decode: 011 | Execute: 00000000
+PC:0000001e | NextPC: 0000001f | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -403,7 +403,7 @@ x[7] = fffe2180
 x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
-NextPC: 00000020 | Fetch: ea000093 | Decode: 011 | Execute: fffffea0
+PC:0000001f | NextPC: 00000020 | Instruction: ea000093
 Register file state:
 x[0] = 00000000 (hardwired)
 x[1] = fffffea0
@@ -417,4 +417,4 @@ x[8] = ffffffff
 x[9] = 0000015b
 x[10] = 0000015b
 Simulation complete.
-$finish called at time : 2575 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 68
+$finish called at time : 2575 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69

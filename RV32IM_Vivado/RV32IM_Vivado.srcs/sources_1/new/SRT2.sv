@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// Performs division in 32+4(Setup) cycles
 module SRT2 #(parameter N=32)(
     input logic rst, clk,
     input logic [N-1:0] dividend, divisor,
