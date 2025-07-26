@@ -14,7 +14,7 @@ module Datapath(
     logic [31:0] ins;               // 32-bit instruction
     logic [4:0] rsi1, rsi2, rdi;    // address of rs1, rs2, rd within instructions
     
-    logic [31:0] outPCPlus1, outPC, prev_outPC; // track Program counter values
+    logic [31:0] outPCPlus4, outPC, prev_outPC; // track Program counter values
     logic [31:0] PC_changed_mask;               // Check if Program counter has changed
     logic PC_changed, ready;                    
     
@@ -54,13 +54,13 @@ module Datapath(
     );
     
     logic [31:0] inPC;
-    assign inPC = hasBranched ? branchPC : outPCPlus1;
+    assign inPC = hasBranched ? branchPC : outPCPlus4;
     
     ProgramCounter PC(
                     .inPC(inPC), 
                     .clk(clk), 
                     .rst(rst), 
-                    .outPCPlus1(outPCPlus1), 
+                    .outPCPlus4(outPCPlus4), 
                     .outPC(outPC),
                     .ready(ready)
                     );
@@ -74,7 +74,6 @@ module Datapath(
         .PCnext(branchPC),
         .hasBranched(hasBranched)
     );
-    
                     
     assign PC_changed_mask = prev_outPC ^ outPC;    // difference in PC
     assign PC_changed = |PC_changed_mask;           // if there is a difference in PC
