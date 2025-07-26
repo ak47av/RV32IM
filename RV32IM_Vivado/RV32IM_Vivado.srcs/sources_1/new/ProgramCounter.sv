@@ -17,6 +17,7 @@ module ProgramCounter(
     
     
     always @(posedge clk) begin
+        $display("[PC] outPC: 0x%0h | outPCplus1: 0x%0h", outPC, outPCPlus1); 
         if (rst) begin // Reset PC to 0x00
             REGISTER <= 0;
         end else if (ready) begin // Assign next instruction to PC only if ready

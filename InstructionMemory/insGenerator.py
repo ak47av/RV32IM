@@ -1,4 +1,4 @@
-def generate_imem_from_file(input_file="ins.txt", output_file="InstructionMemory.sv", addr_width=5):
+def generate_imem_from_file(input_file="ins.txt", output_file="InstructionMemory.sv", addr_width=8):
     """
     Generate SystemVerilog InstructionMemory from a text file containing hex instructions.
     
@@ -15,7 +15,7 @@ def generate_imem_from_file(input_file="ins.txt", output_file="InstructionMemory
     module_header = f"""
 `timescale 1ns / 1ps
 
-// Supports 2^ADDR_WIDTH instructions, in this case 32 instructions
+// Supports 2^ADDR_WIDTH instructions, in this case {2**addr_width} instructions
 module InstructionMemory #(ADDR_WIDTH={addr_width}) (
     input logic [ADDR_WIDTH-1:0] addr,  // Supports 2^ADDR_WIDTH instructions, in this case 32 instructions
     output logic [31:0] ins_out         // Output of the instruction

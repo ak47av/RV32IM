@@ -6,6 +6,7 @@ sv xil_defaultlib  \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/ALU.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/BSplitter.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/Booth4.sv" \
+"../../../../RV32IM_Vivado.srcs/sources_1/new/BranchControl.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/ControlLogic.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/Datapath.sv" \
 "../../../../RV32IM_Vivado.srcs/sources_1/new/ISplitter.sv" \

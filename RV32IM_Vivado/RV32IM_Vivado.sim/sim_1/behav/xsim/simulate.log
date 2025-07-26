@@ -1,10 +1,16 @@
 Time resolution is 1 ps
 Starting Datapath simulation...
-PC:00000000 | NextPC: 00000001 | Instruction: 15c00113
+[PC] outPC: 0xxxxxxxxx | outPCplus1: 0xxxxxxxxx
+[BR] immediate: 0 | PC: xxxxxxxx
+[BR] PCNext: xxxxxxxx | hasBranched: 0
+[PC] outPC: 0x0 | outPCplus1: 0x1
+[BR] immediate: 4 | PC: 0
+[BR] PCNext: 4 | hasBranched: 0
+PC:00000000 | NextPC: 00000001 | Instruction: 00010163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 00000000
+x[1] = 00000000
+x[2] = 00000004
 x[3] = 00000000
 x[4] = 00000000
 x[5] = 00000000
@@ -13,11 +19,14 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000001 | NextPC: 00000002 | Instruction: 02116233
+[PC] outPC: 0x1 | outPCplus1: 0x2
+[BR] immediate: 2 | PC: 1
+[BR] PCNext: 3 | hasBranched: 0
+PC:00000001 | NextPC: 00000002 | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
 x[3] = 00000000
 x[4] = 00000000
 x[5] = 00000000
@@ -26,395 +35,485 @@ x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000002 | NextPC: 00000003 | Instruction: 02117333
+[PC] outPC: 0x2 | outPCplus1: 0x3
+[BR] immediate: 5 | PC: 2
+[BR] PCNext: 7 | hasBranched: 0
+PC:00000002 | NextPC: 00000003 | Instruction: 00009163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
 x[6] = 00000000
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000003 | NextPC: 00000004 | Instruction: 021141b3
+[PC] outPC: 0x3 | outPCplus1: 0x4
+[BR] immediate: 2 | PC: 3
+[BR] PCNext: 5 | hasBranched: 0
+PC:00000003 | NextPC: 00000004 | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 00000000
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000004 | NextPC: 00000005 | Instruction: 021152b3
+[PC] outPC: 0x4 | outPCplus1: 0x5
+[BR] immediate: 5 | PC: 4
+[BR] PCNext: 9 | hasBranched: 0
+PC:00000004 | NextPC: 00000005 | Instruction: 00114163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 00000000
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000005 | NextPC: 00000006 | Instruction: 021103b3
+[PC] outPC: 0x5 | outPCplus1: 0x6
+[BR] immediate: 2 | PC: 5
+[BR] PCNext: 7 | hasBranched: 0
+PC:00000005 | NextPC: 00000006 | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 00000000
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000006 | NextPC: 00000007 | Instruction: 02111433
+[PC] outPC: 0x6 | outPCplus1: 0x7
+[BR] immediate: 5 | PC: 6
+[BR] PCNext: b | hasBranched: 0
+PC:00000006 | NextPC: 00000007 | Instruction: 00116163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
+x[6] = 00000000
+x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000007 | NextPC: 00000008 | Instruction: 021134b3
+[PC] outPC: 0x7 | outPCplus1: 0x8
+[BR] immediate: 2 | PC: 7
+[BR] PCNext: 9 | hasBranched: 0
+PC:00000007 | NextPC: 00000008 | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
-PC:00000008 | NextPC: 00000009 | Instruction: 02112533
+[PC] outPC: 0x8 | outPCplus1: 0x9
+[BR] immediate: 5 | PC: 8
+[BR] PCNext: d | hasBranched: 0
+PC:00000008 | NextPC: 00000009 | Instruction: 0020d163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
 x[10] = 00000000
-PC:00000009 | NextPC: 0000000a | Instruction: 00000013
+[PC] outPC: 0x9 | outPCplus1: 0xa
+[BR] immediate: 2 | PC: 9
+[BR] PCNext: b | hasBranched: 0
+PC:00000009 | NextPC: 0000000a | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
-PC:0000000a | NextPC: 0000000b | Instruction: 00000013
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xa | outPCplus1: 0xb
+[BR] immediate: 5 | PC: a
+[BR] PCNext: f | hasBranched: 0
+PC:0000000a | NextPC: 0000000b | Instruction: 0020f163
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
-PC:0000000b | NextPC: 0000000c | Instruction: 00000013
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xb | outPCplus1: 0xc
+[BR] immediate: 2 | PC: b
+[BR] PCNext: d | hasBranched: 0
+PC:0000000b | NextPC: 0000000c | Instruction: 00500193
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xc | outPCplus1: 0xd
+[BR] immediate: 5 | PC: c
+[BR] PCNext: 11 | hasBranched: 0
 PC:0000000c | NextPC: 0000000d | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xd | outPCplus1: 0xe
+[BR] immediate: 0 | PC: d
+[BR] PCNext: d | hasBranched: 0
 PC:0000000d | NextPC: 0000000e | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xe | outPCplus1: 0xf
+[BR] immediate: 0 | PC: e
+[BR] PCNext: e | hasBranched: 0
 PC:0000000e | NextPC: 0000000f | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0xf | outPCplus1: 0x10
+[BR] immediate: 0 | PC: f
+[BR] PCNext: f | hasBranched: 0
 PC:0000000f | NextPC: 00000010 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x10 | outPCplus1: 0x11
+[BR] immediate: 0 | PC: 10
+[BR] PCNext: 10 | hasBranched: 0
 PC:00000010 | NextPC: 00000011 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x11 | outPCplus1: 0x12
+[BR] immediate: 0 | PC: 11
+[BR] PCNext: 11 | hasBranched: 0
 PC:00000011 | NextPC: 00000012 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x12 | outPCplus1: 0x13
+[BR] immediate: 0 | PC: 12
+[BR] PCNext: 12 | hasBranched: 0
 PC:00000012 | NextPC: 00000013 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x13 | outPCplus1: 0x14
+[BR] immediate: 0 | PC: 13
+[BR] PCNext: 13 | hasBranched: 0
 PC:00000013 | NextPC: 00000014 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x14 | outPCplus1: 0x15
+[BR] immediate: 0 | PC: 14
+[BR] PCNext: 14 | hasBranched: 0
 PC:00000014 | NextPC: 00000015 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x15 | outPCplus1: 0x16
+[BR] immediate: 0 | PC: 15
+[BR] PCNext: 15 | hasBranched: 0
 PC:00000015 | NextPC: 00000016 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x16 | outPCplus1: 0x17
+[BR] immediate: 0 | PC: 16
+[BR] PCNext: 16 | hasBranched: 0
 PC:00000016 | NextPC: 00000017 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x17 | outPCplus1: 0x18
+[BR] immediate: 0 | PC: 17
+[BR] PCNext: 17 | hasBranched: 0
 PC:00000017 | NextPC: 00000018 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x18 | outPCplus1: 0x19
+[BR] immediate: 0 | PC: 18
+[BR] PCNext: 18 | hasBranched: 0
 PC:00000018 | NextPC: 00000019 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x19 | outPCplus1: 0x1a
+[BR] immediate: 0 | PC: 19
+[BR] PCNext: 19 | hasBranched: 0
 PC:00000019 | NextPC: 0000001a | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1a | outPCplus1: 0x1b
+[BR] immediate: 0 | PC: 1a
+[BR] PCNext: 1a | hasBranched: 0
 PC:0000001a | NextPC: 0000001b | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1b | outPCplus1: 0x1c
+[BR] immediate: 0 | PC: 1b
+[BR] PCNext: 1b | hasBranched: 0
 PC:0000001b | NextPC: 0000001c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1c | outPCplus1: 0x1d
+[BR] immediate: 0 | PC: 1c
+[BR] PCNext: 1c | hasBranched: 0
 PC:0000001c | NextPC: 0000001d | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1d | outPCplus1: 0x1e
+[BR] immediate: 0 | PC: 1d
+[BR] PCNext: 1d | hasBranched: 0
 PC:0000001d | NextPC: 0000001e | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1e | outPCplus1: 0x1f
+[BR] immediate: 0 | PC: 1e
+[BR] PCNext: 1e | hasBranched: 0
 PC:0000001e | NextPC: 0000001f | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
-PC:0000001f | NextPC: 00000020 | Instruction: ea000093
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
+[PC] outPC: 0x1f | outPCplus1: 0x20
+[BR] immediate: 0 | PC: 1f
+[BR] PCNext: 1f | hasBranched: 0
+PC:0000001f | NextPC: 00000020 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000000
+x[2] = 00000004
+x[3] = 00000005
+x[4] = 00000000
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 00000000
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 Simulation complete.
-$finish called at time : 2575 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69
+$finish called at time : 335 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69
