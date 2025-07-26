@@ -10,15 +10,17 @@ module ALU(
     output logic ready
     );
     
-    logic [33:0] multiplicand, multiplier;
+    // We use 34-bit multiplication to support unsigned multiplication on Radix-4 Booth
+    logic [33:0] multiplicand, multiplier;  // hold 34-bit values of multiplicand and multiplier
+    logic [67:0] mul_result;                // hold the 68-bit value of the result of multiplication
     
-    logic [67:0] mul_result;
-    logic [31:0] div_rem_result;
-    logic [1:0] div_rem_op;
-    logic mul_done, div_done;
+    logic [31:0] div_rem_result;            // Hold the 32-bit result of the Division/remainder operation
+    logic [1:0] div_rem_op;                 // Select between DIV, REM, DIVU and REMU
     
-    assign is_muldiv = sel[4];
-    assign is_mul = is_muldiv && sel[3];
+    logic mul_done, div_done;               // Signals for multiplication and division done  
+    
+    assign is_muldiv = sel[4];              // sel 
+    assign is_mul = is_muldiv && sel[3];    // if high then multiplication, else division/remainder
     assign ready = (is_muldiv == 0) ? 1'b1 : (is_mul ? mul_done : div_done); // TO SIGNAL IF MULTIPLICATION/DIVISION IS DONE
     
     Booth4 booth_multiplier(
@@ -30,18 +32,20 @@ module ALU(
         .done(mul_done)
     );
     
-    SRT2 SRT_divider(
+    SRT2 divider(
         .rst(rst),
         .clk(clk),
-        .numerator(dataA),
-        .denominator(dataB),
+        .dividend(dataA),
+        .divisor(dataB),
         .op(div_rem_op),
         .out(div_rem_result),
         .done(div_done)
     );
     
     always_comb begin
-        div_rem_op = 2'b00; // to prevent an inferred latch
+        multiplicand = 0;
+        multiplier = 0;
+        div_rem_op = 2'b00;
         case(sel)
             'h0: dataD = dataA + dataB;         // ADD  - Addition
             'h1: dataD = dataA << dataB[4:0];   // SLL  - Shift left logical
@@ -64,60 +68,64 @@ module ALU(
                 if(mul_done) begin 
                     dataD = mul_result[31:0];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h1F: begin
-                //MULH
+                //MULH - sign extend both operands
                 multiplicand = {{2{dataA[31]}}, dataA};
                 multiplier = {{2{dataB[31]}}, dataB};
                 if(mul_done) begin
                     dataD = mul_result[63:32];
                 end
-                else dataD = 32'h00000000; 
+                else dataD = '0; 
             end
             'h18: begin
-                //MULHU
+                //MULHU - zero extend both operands
                 multiplicand = {2'b00, dataA};
                 multiplier = {2'b00, dataB};
-                if(mul_done)dataD = mul_result[63:32];   // MULHU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+                if(mul_done)dataD = mul_result[63:32];
+                else dataD = '0; 
             end
             'h19: begin
-                //MULHSU
+                //MULHSU - sign extend dataA and zero extend dataB
                 multiplicand = {{2{dataA[31]}}, dataA};
                 multiplier = {2'b00, dataB};
-                if(mul_done)dataD = mul_result[63:32];   // MULHSU - multiply and produce upper 32 bits
-                else dataD = 32'h00000000; 
+                if(mul_done)dataD = mul_result[63:32];
+                else dataD = '0; 
             end
             'h12: begin
+                // DIV
                 div_rem_op = 2'b00;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h13: begin
+                // DIVU
                 div_rem_op = 2'b01;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h14: begin
+                // REM
                 div_rem_op = 2'b10;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
             'h15: begin
+                // REMU
                 div_rem_op = 2'b11;
                 if(div_done) begin 
                     dataD = div_rem_result;
                 end
-                else dataD = 32'h00000000;
+                else dataD = '0;
             end
-            default: dataD = 32'hDEADBEEF;
+            default: dataD = 32'hDEADBEEF;  // Debug if error in ALU control signals
         endcase
     end
     

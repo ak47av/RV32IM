@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1753345983" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Datapath.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1753436285" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Datapath.dcp">
   <File Type="PA-TCL" Name="Datapath.tcl"/>
   <File Type="REPORTS-TCL" Name="Datapath_reports.tcl"/>
   <File Type="RDS-RDS" Name="Datapath.vds"/>
@@ -162,6 +162,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../Downloads/Cora-Z7-07S-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

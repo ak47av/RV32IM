@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1753345983">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1753436285">
   <File Type="PA-TCL" Name="Datapath.tcl"/>
   <File Type="REPORTS-TCL" Name="Datapath_reports.tcl"/>
   <File Type="INIT-TIMING" Name="Datapath_timing_summary_init.rpt"/>
@@ -237,6 +237,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../Downloads/Cora-Z7-07S-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

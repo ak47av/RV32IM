@@ -56,9 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
+set_msg_config -id {Physopt 32-662} -limit 9999
+set_msg_config -id {Physopt 32-668} -limit 9999
+set_msg_config -id {Physopt 32-702} -limit 9999
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
