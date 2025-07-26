@@ -34,7 +34,7 @@ module Datapath_tb;
     begin
         $display("Register file state:");
         $display("x[0] = 00000000 (hardwired)");
-        for (int i = 1; i < 11; i++) begin
+        for (int i = 1; i <= 11; i++) begin
             $display("x[%0d] = %h", i, dut.registers.x[i]);
         end
     end
@@ -51,14 +51,15 @@ module Datapath_tb;
         rst = 0;
 
         // Loop until PC reaches 32
-        while (dut.outPC != 32) begin
+        while (dut.outPC <= 'h70) begin
             @(posedge clk); // Wait for next clock edge
         
             if(dut.PC_changed) begin
                 // Display PC, instruction, and register values
-                $display("NextPC: %h | Fetch: %h | Decode: %h | Execute: %h",
-                    dut.outPC, dut.ins, control_agg, dut.ALUoutput);
-        
+//                $display("NextPC: %h | Fetch: %h | Decode: %h | Execute: %h",
+//                    dut.outPC, dut.ins, control_agg, dut.ALUoutput);
+                $display("PC:%h | NextPC: %h | Instruction: %h",
+                    dut.prev_outPC, dut.outPC, dut.ins);
                 // Print register file contents (assuming `print_registers()` is defined)
                 print_registers();
             end
