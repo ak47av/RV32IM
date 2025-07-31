@@ -42,7 +42,7 @@ module ALU_tb;
             wait(!ready);
             @(posedge clk);
             wait (ready);
-            $display("[%s] A = %0h, B = %0h, dataD = 0x%08X", name, a, b, dataD);
+            $display("[%s] A = %0h, B = %0h, output = 0x%08X", name, a, b, dataD);
             #10;
         end
     endtask
@@ -57,7 +57,7 @@ module ALU_tb;
             wait(!ready);
             @(posedge clk);
             wait (ready);
-            $display("[%s] A = %0h, B = %0h, dataD = 0x%08X", name, a, b, dataD);
+            $display("[%s] A = %0h, B = %0h, output = 0x%08X", name, a, b, dataD);
             #10;
         end
     endtask

@@ -57,9 +57,10 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_msg_config -id {Physopt 32-662} -limit 9999
-set_msg_config -id {Physopt 32-668} -limit 9999
-set_msg_config -id {Physopt 32-702} -limit 9999
+set_param synth.incrementalSynthesisCache C:/Users/sarun/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18276-Arun_Windows/incrSyn
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
@@ -82,6 +83,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/ALU.sv
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/BSplitter.sv
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/Booth4.sv
+  C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/BranchControl.sv
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/ControlLogic.sv
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/ISplitter.sv
   C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sources_1/new/ImmediateGenerator.sv

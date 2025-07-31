@@ -40,6 +40,7 @@ module Datapath(
    
     assign dataB = (bsel) ? immediateValue : rs2;   // Switch using bsel
     assign rd = ALUoutput;                          // Store output of ALU in rd
+    // assign rd = brsel[3] ? jal(r)output : ALUoutput
     
     //assign out = ALUoutput;                         // Store output of the ALU for debugging
     

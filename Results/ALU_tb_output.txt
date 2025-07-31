@@ -1,0 +1,8 @@
+[MUL   ] A = 15c, B = fffffea0, dataD = 0xfffe2180
+[MULH  ] A = 15c, B = fffffea0, dataD = 0xffffffff
+[MULHU ] A = 15c, B = fffffea0, dataD = 0x0000015b
+[MULHSU] A = 15c, B = fffffea0, dataD = 0x0000015b
+[DIV  ] A = 15c, B = fffffea0, output = 0x00000000
+[REM  ] A = 15c, B = fffffea0, output = 0x0000015c
+[DIVU  ] A = 15c, B = fffffea0, output = 0x00000000
+[REMU  ] A = 15c, B = fffffea0, output = 0x0000015c

@@ -6,11 +6,13 @@ module BranchControl(
     input logic [31:0] immediate,
     input logic [31:0] PC,
     input logic [31:0] ALUoutput,
+    //input logic [31:0] rs1,
     output logic [31:0] PCnext,
+    // output logic hasJumped,
     output logic hasBranched
     );
     
-    assign PCnext = immediate + PC;
+    assign PCNext = immediate + PC;
     
     // check if branch instruction
     logic isBranch;
