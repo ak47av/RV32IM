@@ -2,16 +2,18 @@ Time resolution is 1 ps
 Starting Datapath simulation...
 [PC] outPC: 0xxxxxxxxx | outPCplus4: 0xxxxxxxxx
 [BR] immediate: 0 | PC: xxxxxxxx
-[BR] PCNext: xxxxxxxx | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: xxxxxxxx | hasBranched: 0 | hasJumped: 0
 [PC] outPC: 0x0 | outPCplus4: 0x4
-[BR] immediate: fffffea0 | PC: 0
-[BR] PCNext: fffffea0 | hasBranched: 0
-PC:00000000 | NextPC: 00000004 | Instruction: 15c00113
+[BR] immediate: 5 | PC: 0
+[BR] JalrNext: 4 | isJalr: 0
+[BR] PCNext: 5 | hasBranched: 0 | hasJumped: 0
+PC:00000000 | NextPC: 00000004 | Instruction: 00700213
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
+x[1] = 00000000
 x[2] = 00000000
-x[3] = 00000000
+x[3] = 00000005
 x[4] = 00000000
 x[5] = 00000000
 x[6] = 00000000
@@ -21,15 +23,16 @@ x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x4 | outPCplus4: 0x8
-[BR] immediate: 15c | PC: 4
-[BR] PCNext: 160 | hasBranched: 0
-PC:00000004 | NextPC: 00000008 | Instruction: 02116233
+[BR] immediate: 7 | PC: 4
+[BR] JalrNext: 6 | isJalr: 0
+[BR] PCNext: b | hasBranched: 0 | hasJumped: 0
+PC:00000004 | NextPC: 00000008 | Instruction: 010000ef
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 00000000
+x[1] = 00000000
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
 x[6] = 00000000
 x[7] = 00000000
@@ -38,123 +41,16 @@ x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-[PC] outPC: 0x8 | outPCplus4: 0xc
-[BR] immediate: 21 | PC: 8
-[BR] PCNext: 29 | hasBranched: 0
-PC:00000008 | NextPC: 0000000c | Instruction: 02117333
+[BR] immediate: 10 | PC: 8
+[BR] JalrNext: 10 | isJalr: 0
+[BR] PCNext: 18 | hasBranched: 0 | hasJumped: 1
+PC:00000008 | NextPC: 00000018 | Instruction: 00418333
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 0000000c
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
 x[6] = 00000000
 x[7] = 00000000
@@ -162,1011 +58,437 @@ x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-[PC] outPC: 0xc | outPCplus4: 0x10
-[BR] immediate: 21 | PC: c
-[BR] PCNext: 2d | hasBranched: 0
-PC:0000000c | NextPC: 00000010 | Instruction: 021141b3
+[PC] outPC: 0x18 | outPCplus4: 0x1c
+[BR] immediate: 4 | PC: 18
+[BR] JalrNext: 8 | isJalr: 0
+[BR] PCNext: 1c | hasBranched: 0 | hasJumped: 0
+PC:00000018 | NextPC: 0000001c | Instruction: 00008067
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 0000000c
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 0000000c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-[PC] outPC: 0x10 | outPCplus4: 0x14
-[BR] immediate: 21 | PC: 10
-[BR] PCNext: 31 | hasBranched: 0
-PC:00000010 | NextPC: 00000014 | Instruction: 021152b3
+[PC] outPC: 0x1c | outPCplus4: 0x20
+[BR] immediate: 0 | PC: 1c
+[BR] JalrNext: c | isJalr: 1
+[BR] PCNext: c | hasBranched: 0 | hasJumped: 1
+PC:0000001c | NextPC: 0000000c | Instruction: 014000ef
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 0000000c
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 0000000c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-[PC] outPC: 0x14 | outPCplus4: 0x18
-[BR] immediate: 21 | PC: 14
-[BR] PCNext: 35 | hasBranched: 0
-PC:00000014 | NextPC: 00000018 | Instruction: 021103b3
+[PC] outPC: 0xc | outPCplus4: 0x10
+[BR] immediate: 14 | PC: c
+[BR] JalrNext: 14 | isJalr: 0
+[BR] PCNext: 20 | hasBranched: 0 | hasJumped: 1
+PC:0000000c | NextPC: 00000020 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
+x[6] = 0000000c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-[PC] outPC: 0x18 | outPCplus4: 0x1c
-[BR] immediate: 21 | PC: 18
-[BR] PCNext: 39 | hasBranched: 0
-PC:00000018 | NextPC: 0000001c | Instruction: 02111433
+[PC] outPC: 0x20 | outPCplus4: 0x24
+[BR] immediate: 0 | PC: 20
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 20 | hasBranched: 0 | hasJumped: 0
+PC:00000020 | NextPC: 00000024 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
+x[6] = 0000000c
+x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-[PC] outPC: 0x1c | outPCplus4: 0x20
-[BR] immediate: 21 | PC: 1c
-[BR] PCNext: 3d | hasBranched: 0
-PC:0000001c | NextPC: 00000020 | Instruction: 021134b3
-Register file state:
-x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
-x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 00000000
-x[10] = 00000000
-x[11] = 00000000
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-[PC] outPC: 0x20 | outPCplus4: 0x24
-[BR] immediate: 21 | PC: 20
-[BR] PCNext: 41 | hasBranched: 0
-PC:00000020 | NextPC: 00000024 | Instruction: 02112533
-Register file state:
-x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
-x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 00000000
-x[11] = 00000000
 [PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
-[PC] outPC: 0x24 | outPCplus4: 0x28
-[BR] immediate: 21 | PC: 24
-[BR] PCNext: 45 | hasBranched: 0
+[BR] immediate: 0 | PC: 24
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 24 | hasBranched: 0 | hasJumped: 0
 PC:00000024 | NextPC: 00000028 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x28 | outPCplus4: 0x2c
 [BR] immediate: 0 | PC: 28
-[BR] PCNext: 28 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 28 | hasBranched: 0 | hasJumped: 0
 PC:00000028 | NextPC: 0000002c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x2c | outPCplus4: 0x30
 [BR] immediate: 0 | PC: 2c
-[BR] PCNext: 2c | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 2c | hasBranched: 0 | hasJumped: 0
 PC:0000002c | NextPC: 00000030 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x30 | outPCplus4: 0x34
 [BR] immediate: 0 | PC: 30
-[BR] PCNext: 30 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 30 | hasBranched: 0 | hasJumped: 0
 PC:00000030 | NextPC: 00000034 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x34 | outPCplus4: 0x38
 [BR] immediate: 0 | PC: 34
-[BR] PCNext: 34 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 34 | hasBranched: 0 | hasJumped: 0
 PC:00000034 | NextPC: 00000038 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x38 | outPCplus4: 0x3c
 [BR] immediate: 0 | PC: 38
-[BR] PCNext: 38 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 38 | hasBranched: 0 | hasJumped: 0
 PC:00000038 | NextPC: 0000003c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x3c | outPCplus4: 0x40
 [BR] immediate: 0 | PC: 3c
-[BR] PCNext: 3c | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 3c | hasBranched: 0 | hasJumped: 0
 PC:0000003c | NextPC: 00000040 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x40 | outPCplus4: 0x44
 [BR] immediate: 0 | PC: 40
-[BR] PCNext: 40 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 40 | hasBranched: 0 | hasJumped: 0
 PC:00000040 | NextPC: 00000044 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x44 | outPCplus4: 0x48
 [BR] immediate: 0 | PC: 44
-[BR] PCNext: 44 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 44 | hasBranched: 0 | hasJumped: 0
 PC:00000044 | NextPC: 00000048 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x48 | outPCplus4: 0x4c
 [BR] immediate: 0 | PC: 48
-[BR] PCNext: 48 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 48 | hasBranched: 0 | hasJumped: 0
 PC:00000048 | NextPC: 0000004c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x4c | outPCplus4: 0x50
 [BR] immediate: 0 | PC: 4c
-[BR] PCNext: 4c | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 4c | hasBranched: 0 | hasJumped: 0
 PC:0000004c | NextPC: 00000050 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x50 | outPCplus4: 0x54
 [BR] immediate: 0 | PC: 50
-[BR] PCNext: 50 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 50 | hasBranched: 0 | hasJumped: 0
 PC:00000050 | NextPC: 00000054 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x54 | outPCplus4: 0x58
 [BR] immediate: 0 | PC: 54
-[BR] PCNext: 54 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 54 | hasBranched: 0 | hasJumped: 0
 PC:00000054 | NextPC: 00000058 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x58 | outPCplus4: 0x5c
 [BR] immediate: 0 | PC: 58
-[BR] PCNext: 58 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 58 | hasBranched: 0 | hasJumped: 0
 PC:00000058 | NextPC: 0000005c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x5c | outPCplus4: 0x60
 [BR] immediate: 0 | PC: 5c
-[BR] PCNext: 5c | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 5c | hasBranched: 0 | hasJumped: 0
 PC:0000005c | NextPC: 00000060 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x60 | outPCplus4: 0x64
 [BR] immediate: 0 | PC: 60
-[BR] PCNext: 60 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 60 | hasBranched: 0 | hasJumped: 0
 PC:00000060 | NextPC: 00000064 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x64 | outPCplus4: 0x68
 [BR] immediate: 0 | PC: 64
-[BR] PCNext: 64 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 64 | hasBranched: 0 | hasJumped: 0
 PC:00000064 | NextPC: 00000068 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x68 | outPCplus4: 0x6c
 [BR] immediate: 0 | PC: 68
-[BR] PCNext: 68 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 68 | hasBranched: 0 | hasJumped: 0
 PC:00000068 | NextPC: 0000006c | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x6c | outPCplus4: 0x70
 [BR] immediate: 0 | PC: 6c
-[BR] PCNext: 6c | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 6c | hasBranched: 0 | hasJumped: 0
 PC:0000006c | NextPC: 00000070 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 [PC] outPC: 0x70 | outPCplus4: 0x74
 [BR] immediate: 0 | PC: 70
-[BR] PCNext: 70 | hasBranched: 0
+[BR] JalrNext: 0 | isJalr: 0
+[BR] PCNext: 70 | hasBranched: 0 | hasJumped: 0
 PC:00000070 | NextPC: 00000074 | Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fffffea0
-x[2] = 0000015c
-x[3] = 00000000
-x[4] = 0000015c
+x[1] = 00000010
+x[2] = 00000000
+x[3] = 00000005
+x[4] = 00000007
 x[5] = 00000000
-x[6] = 0000015c
-x[7] = fffe2180
-x[8] = ffffffff
-x[9] = 0000015b
-x[10] = 0000015b
+x[6] = 0000000c
+x[7] = 00000000
+x[8] = 00000000
+x[9] = 00000000
+x[10] = 00000000
 x[11] = 00000000
 Simulation complete.
-$finish called at time : 2545 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69
+$finish called at time : 285 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69

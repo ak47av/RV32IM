@@ -30,8 +30,8 @@ module Datapath(
     
     logic [31:0] dataB, ALUoutput;  // Second input to ALU and ALU output
     
-    logic [31:0] branchPC;
-    logic hasBranched;
+    logic [31:0] branchPC, returnAddress;
+    logic hasBranched, hasJumped;
     
     // Refer to instruction decoding in the ISA
     assign rdi = ins[11:7];        
@@ -39,8 +39,8 @@ module Datapath(
     assign rsi2 = ins[24:20];
    
     assign dataB = (bsel) ? immediateValue : rs2;   // Switch using bsel
-    assign rd = ALUoutput;                          // Store output of ALU in rd
-    // assign rd = brsel[3] ? jal(r)output : ALUoutput
+    //assign rd = ALUoutput;                          // Store output of ALU in rd
+    assign rd = branchSelect[3] ? returnAddress : ALUoutput;
     
     //assign out = ALUoutput;                         // Store output of the ALU for debugging
     
@@ -55,7 +55,7 @@ module Datapath(
     );
     
     logic [31:0] inPC;
-    assign inPC = hasBranched ? branchPC : outPCPlus4;
+    assign inPC = (|branchSelect) ? branchPC : outPCPlus4;
     
     ProgramCounter PC(
                     .inPC(inPC), 
@@ -72,8 +72,11 @@ module Datapath(
         .immediate(immediateValue),
         .PC(outPC),
         .ALUoutput(ALUoutput),
+        .rs1(rs1),
         .PCnext(branchPC),
-        .hasBranched(hasBranched)
+        .hasJumped(hasJumped),
+        .hasBranched(hasBranched),
+        .returnAddress(returnAddress)
     );
                     
     assign PC_changed_mask = prev_outPC ^ outPC;    // difference in PC
