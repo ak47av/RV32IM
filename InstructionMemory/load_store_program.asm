@@ -1,0 +1,11 @@
+lui x1, 0xFEDCB
+addi x2, x0, 0x789
+add x1, x2, x1
+sb x1, 0x3c(x0)
+sh x1, 0x30(x0)
+sw x1, 0x34(x0)
+lb x3, 0x34(x0)
+lh x4, 0x34(x0)
+lbu x5, 0x34(x0)
+lhu x6, 0x34(x0)
+lw x7, 0x34(x0)
