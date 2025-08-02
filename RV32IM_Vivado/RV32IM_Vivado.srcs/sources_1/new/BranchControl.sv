@@ -35,9 +35,9 @@ module BranchControl(
     assign returnAddress = PC + 4;
     
     always @(posedge clk) begin
-        $display("[BR] immediate: %0h | PC: %0h", immediate, PC);
-        $display("[BR] JalrNext: %0h | isJalr: %0h", jalrNext, isJalr);
-        $display("[BR] PCNext: %0h | hasBranched: %0h | hasJumped: %0h", PCnext, hasBranched, hasJumped);
+//        $display("[BR] immediate: %0h | PC: %0h", immediate, PC);
+//        $display("[BR] JalrNext: %0h | isJalr: %0h", jalrNext, isJalr);
+//        $display("[BR] PCNext: %0h | hasBranched: %0h | hasJumped: %0h", PCnext, hasBranched, hasJumped);
     end
     
 endmodule
