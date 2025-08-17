@@ -1,9 +1,9 @@
 Time resolution is 1 ps
 Starting Datapath simulation...
-PC:00000000 | NextPC: 00000004 | Next Instruction: 78900113
+PC:00000000 | NextPC: 00000004 | Next Instruction: 15c00113
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb000
+x[1] = fffffea0
 x[2] = 00000000
 x[3] = 00000000
 x[4] = 00000000
@@ -14,11 +14,11 @@ x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000004 | NextPC: 00000008 | Next Instruction: 001100b3
+PC:00000004 | NextPC: 00000008 | Next Instruction: 02116233
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb000
-x[2] = 00000789
+x[1] = fffffea0
+x[2] = 0000015c
 x[3] = 00000000
 x[4] = 00000000
 x[5] = 00000000
@@ -28,13 +28,13 @@ x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000008 | NextPC: 0000000c | Next Instruction: 02100e23
+PC:00000008 | NextPC: 0000000c | Next Instruction: 02117333
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
+x[1] = fffffea0
+x[2] = 0000015c
 x[3] = 00000000
-x[4] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
 x[6] = 00000000
 x[7] = 00000000
@@ -42,369 +42,369 @@ x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:0000000c | NextPC: 00000010 | Next Instruction: 02101823
+PC:0000000c | NextPC: 00000010 | Next Instruction: 021141b3
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
+x[1] = fffffea0
+x[2] = 0000015c
 x[3] = 00000000
-x[4] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
-x[6] = 00000000
+x[6] = 0000015c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000010 | NextPC: 00000014 | Next Instruction: 02102a23
+PC:00000010 | NextPC: 00000014 | Next Instruction: 021152b3
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
+x[1] = fffffea0
+x[2] = 0000015c
 x[3] = 00000000
-x[4] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
-x[6] = 00000000
+x[6] = 0000015c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000014 | NextPC: 00000018 | Next Instruction: 03400183
+PC:00000014 | NextPC: 00000018 | Next Instruction: 021103b3
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
+x[1] = fffffea0
+x[2] = 0000015c
 x[3] = 00000000
-x[4] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
-x[6] = 00000000
+x[6] = 0000015c
 x[7] = 00000000
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000018 | NextPC: 0000001c | Next Instruction: 03401203
+PC:00000018 | NextPC: 0000001c | Next Instruction: 02111433
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
-x[6] = 00000000
-x[7] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
 x[8] = 00000000
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:0000001c | NextPC: 00000020 | Next Instruction: 03404283
+PC:0000001c | NextPC: 00000020 | Next Instruction: 021134b3
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
 x[5] = 00000000
-x[6] = 00000000
-x[7] = 00000000
-x[8] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
 x[9] = 00000000
 x[10] = 00000000
 x[11] = 00000000
-PC:00000020 | NextPC: 00000024 | Next Instruction: 03405303
+PC:00000020 | NextPC: 00000024 | Next Instruction: 02112533
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 00000000
-x[7] = 00000000
-x[8] = 00000000
-x[9] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
 x[10] = 00000000
 x[11] = 00000000
-PC:00000024 | NextPC: 00000028 | Next Instruction: 03402383
+PC:00000024 | NextPC: 00000028 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = 00000000
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000028 | NextPC: 0000002c | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:0000002c | NextPC: 00000030 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000030 | NextPC: 00000034 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000034 | NextPC: 00000038 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000038 | NextPC: 0000003c | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:0000003c | NextPC: 00000040 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000040 | NextPC: 00000044 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000044 | NextPC: 00000048 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000048 | NextPC: 0000004c | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:0000004c | NextPC: 00000050 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000050 | NextPC: 00000054 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000054 | NextPC: 00000058 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000058 | NextPC: 0000005c | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:0000005c | NextPC: 00000060 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000060 | NextPC: 00000064 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000064 | NextPC: 00000068 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000068 | NextPC: 0000006c | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:0000006c | NextPC: 00000070 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 PC:00000070 | NextPC: 00000074 | Next Instruction: 00000013
 Register file state:
 x[0] = 00000000 (hardwired)
-x[1] = fedcb789
-x[2] = 00000789
-x[3] = ffffff89
-x[4] = ffffb789
-x[5] = 00000089
-x[6] = 0000b789
-x[7] = fedcb789
-x[8] = 00000000
-x[9] = 00000000
-x[10] = 00000000
+x[1] = fffffea0
+x[2] = 0000015c
+x[3] = 00000000
+x[4] = 0000015c
+x[5] = 00000000
+x[6] = 0000015c
+x[7] = fffe2180
+x[8] = ffffffff
+x[9] = 0000015b
+x[10] = 0000015b
 x[11] = 00000000
 Simulation complete.
-$finish called at time : 305 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69
+$finish called at time : 2545 ns : File "C:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.srcs/sim_1/new/Datapath_tb.sv" Line 69

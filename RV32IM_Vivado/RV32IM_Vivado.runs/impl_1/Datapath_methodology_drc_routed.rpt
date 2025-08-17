@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sat Aug  2 15:27:37 2025
+| Date         : Mon Aug 11 16:55:01 2025
 | Host         : Arun_Windows running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Datapath_methodology_drc_routed.rpt -pb Datapath_methodology_drc_routed.pb -rpx Datapath_methodology_drc_routed.rpx
 | Design       : Datapath
@@ -70,7 +70,7 @@ Related violations: <none>
 
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 568 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 549 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 XDCB-5#1 Warning
@@ -82,7 +82,7 @@ Related violations: <none>
 XDCB-5#2 Warning
 Runtime inefficient way to find pin objects  
 The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_2_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '98' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: c:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.runs/impl_1/.Xil/Vivado-16232-Arun_Windows/u_ila_0_CV.0/out/ila_early.xdc (Line: 72)
+Current XDC: c:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.runs/impl_1/.Xil/Vivado-11604-Arun_Windows/u_ila_0_CV.0/out/ila_early.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#3 Warning
@@ -94,7 +94,7 @@ Related violations: <none>
 XDCB-5#4 Warning
 Runtime inefficient way to find pin objects  
 The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '98' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: c:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.runs/impl_1/.Xil/Vivado-16232-Arun_Windows/u_ila_0_CV.0/out/ila_early.xdc (Line: 72)
+Current XDC: c:/Users/sarun/Documents/RV32IM/RV32IM_Vivado/RV32IM_Vivado.runs/impl_1/.Xil/Vivado-11604-Arun_Windows/u_ila_0_CV.0/out/ila_early.xdc (Line: 72)
 Related violations: <none>
 
 
